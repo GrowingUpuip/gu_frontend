@@ -1,0 +1,2317 @@
+{
+	"info": {
+		"_postman_id": "fb434d46-ef01-4449-bd1f-379753c0ae55",
+		"name": "Growing Up+",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "36797898"
+	},
+	"item": [
+		{
+			"name": "GET",
+			"item": [
+				{
+					"name": "informacion pagina eventos",
+					"item": [
+						{
+							"name": "endpoint para tarjetas eventos",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/events/?fields[0]=id&fields[1]=title&fields[2]=description&fields[3]=date_start&populate[image][fields][0]=url",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"events",
+										""
+									],
+									"query": [
+										{
+											"key": "fields[0]",
+											"value": "id"
+										},
+										{
+											"key": "fields[1]",
+											"value": "title"
+										},
+										{
+											"key": "fields[2]",
+											"value": "description"
+										},
+										{
+											"key": "fields[3]",
+											"value": "date_start"
+										},
+										{
+											"key": "populate[image][fields][0]",
+											"value": "url"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "resultado consulta endpoint para tarjetas eventos",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url}}/api/events/?fields[0]=id&fields[1]=title&fields[2]=description&fields[3]=date_start&populate[image][fields][0]=url",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"events",
+												""
+											],
+											"query": [
+												{
+													"key": "fields[0]",
+													"value": "id"
+												},
+												{
+													"key": "fields[1]",
+													"value": "title"
+												},
+												{
+													"key": "fields[2]",
+													"value": "description"
+												},
+												{
+													"key": "fields[3]",
+													"value": "date_start"
+												},
+												{
+													"key": "populate[image][fields][0]",
+													"value": "url"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Security-Policy",
+											"value": "connect-src 'self' https:;img-src 'self' data: blob: https://market-assets.strapi.io;media-src 'self' data: blob:;default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline'"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "no-referrer"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000; includeSubDomains"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-DNS-Prefetch-Control",
+											"value": "off"
+										},
+										{
+											"key": "X-Download-Options",
+											"value": "noopen"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-Permitted-Cross-Domain-Policies",
+											"value": "none"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": ""
+										},
+										{
+											"key": "Access-Control-Allow-Credentials",
+											"value": "true"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "Strapi <strapi.io>"
+										},
+										{
+											"key": "Content-Length",
+											"value": "2230"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 14 Jul 2024 14:59:40 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"attributes\": {\n                \"title\": \"Semana de la ingenieria\",\n                \"description\": \"Semana de la ingenieria a celebrarse desde el 15 al 19 de julio de 2023\",\n                \"date_start\": \"2024-07-15\",\n                \"image\": {\n                    \"data\": [\n                        {\n                            \"id\": 1,\n                            \"attributes\": {\n                                \"url\": \"/uploads/UIP_RS_SEMANA_DE_INGENIERIA_JUNIO_2023_1_864x1536_4025d0db58.jpg\"\n                            }\n                        }\n                    ]\n                }\n            }\n        },\n        {\n            \"id\": 2,\n            \"attributes\": {\n                \"title\": \"Hackaton\",\n                \"description\": \"Hackaton a celebrarse el 19 de octubre de 2024\",\n                \"date_start\": \"2024-10-19\",\n                \"image\": {\n                    \"data\": null\n                }\n            }\n        },\n        {\n            \"id\": 23,\n            \"attributes\": {\n                \"title\": \"Feria de Empleo\",\n                \"description\": \"Feria de empleo con diversas empresas panameñas.\",\n                \"date_start\": \"2024-08-01\",\n                \"image\": {\n                    \"data\": null\n                }\n            }\n        },\n        {\n            \"id\": 24,\n            \"attributes\": {\n                \"title\": \"Concierto de Verano\",\n                \"description\": \"Concierto al aire libre en la Cinta Costera.\",\n                \"date_start\": \"2024-09-15\",\n                \"image\": {\n                    \"data\": null\n                }\n            }\n        },\n        {\n            \"id\": 25,\n            \"attributes\": {\n                \"title\": \"Maratón Ciudad de Panamá\",\n                \"description\": \"Maratón anual por las calles de la ciudad.\",\n                \"date_start\": \"2024-11-10\",\n                \"image\": {\n                    \"data\": null\n                }\n            }\n        },\n        {\n            \"id\": 26,\n            \"attributes\": {\n                \"title\": \"Exposición de Arte\",\n                \"description\": \"Exposición de arte contemporáneo.\",\n                \"date_start\": \"2024-10-05\",\n                \"image\": {\n                    \"data\": null\n                }\n            }\n        },\n        {\n            \"id\": 27,\n            \"attributes\": {\n                \"title\": \"Seminario de Tecnología\",\n                \"description\": \"Seminario sobre las últimas tendencias en tecnología.\",\n                \"date_start\": \"2024-09-25\",\n                \"image\": {\n                    \"data\": null\n                }\n            }\n        },\n        {\n            \"id\": 28,\n            \"attributes\": {\n                \"title\": \"Festival Gastronómico\",\n                \"description\": \"Festival con los mejores chefs de Panamá.\",\n                \"date_start\": \"2024-12-01\",\n                \"image\": {\n                    \"data\": null\n                }\n            }\n        },\n        {\n            \"id\": 29,\n            \"attributes\": {\n                \"title\": \"Taller de Fotografía\",\n                \"description\": \"Taller práctico de fotografía para principiantes.\",\n                \"date_start\": \"2024-08-15\",\n                \"image\": {\n                    \"data\": null\n                }\n            }\n        },\n        {\n            \"id\": 30,\n            \"attributes\": {\n                \"title\": \"Conferencia de Medicina\",\n                \"description\": \"Conferencia sobre avances en medicina.\",\n                \"date_start\": \"2024-10-10\",\n                \"image\": {\n                    \"data\": null\n                }\n            }\n        },\n        {\n            \"id\": 31,\n            \"attributes\": {\n                \"title\": \"Encuentro de Emprendedores\",\n                \"description\": \"Encuentro para compartir ideas y experiencias entre emprendedores.\",\n                \"date_start\": \"2024-11-05\",\n                \"image\": {\n                    \"data\": null\n                }\n            }\n        },\n        {\n            \"id\": 32,\n            \"attributes\": {\n                \"title\": \"Curso de Programación\",\n                \"description\": \"Curso intensivo de programación para jóvenes.\",\n                \"date_start\": \"2024-12-10\",\n                \"image\": {\n                    \"data\": null\n                }\n            }\n        }\n    ],\n    \"meta\": {\n        \"pagination\": {\n            \"page\": 1,\n            \"pageSize\": 25,\n            \"pageCount\": 1,\n            \"total\": 12\n        }\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "endpoint informacion completa evento",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/events/:{id}/",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"events",
+										":{id}",
+										""
+									],
+									"variable": [
+										{
+											"key": "{id}",
+											"value": "23"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "resultado consulta endpoint informacion completa evento",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url}}/api/events/:{id}/",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"events",
+												":{id}",
+												""
+											],
+											"variable": [
+												{
+													"key": "{id}",
+													"value": "23"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Security-Policy",
+											"value": "connect-src 'self' https:;img-src 'self' data: blob: https://market-assets.strapi.io;media-src 'self' data: blob:;default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline'"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "no-referrer"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000; includeSubDomains"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-DNS-Prefetch-Control",
+											"value": "off"
+										},
+										{
+											"key": "X-Download-Options",
+											"value": "noopen"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-Permitted-Cross-Domain-Policies",
+											"value": "none"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": ""
+										},
+										{
+											"key": "Access-Control-Allow-Credentials",
+											"value": "true"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "Strapi <strapi.io>"
+										},
+										{
+											"key": "Content-Length",
+											"value": "520"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 14 Jul 2024 15:10:41 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": {\n        \"id\": 23,\n        \"attributes\": {\n            \"title\": \"Feria de Empleo\",\n            \"description\": \"Feria de empleo con diversas empresas panameñas.\",\n            \"date_start\": \"2024-08-01\",\n            \"date_end\": \"2024-08-01\",\n            \"time_start\": \"09:00:00.000\",\n            \"time_end\": \"17:00:00.000\",\n            \"location\": \"Centro de Convenciones ATLAPA\",\n            \"createdAt\": \"2024-07-14T03:56:28.000Z\",\n            \"updatedAt\": \"2024-07-14T03:56:28.000Z\",\n            \"publishedAt\": \"2024-07-14T03:56:28.000Z\",\n            \"type_event\": \"Feria\",\n            \"keywords\": \"empleo,feria,empresas\",\n            \"external_link\": \"https://www.feriadeempleo.com\",\n            \"aboutMe\": null\n        }\n    },\n    \"meta\": {}\n}"
+								}
+							]
+						},
+						{
+							"name": "eventos_todos",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/events",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"events"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "resultado eventos_todos",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url}}/api/events",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"events"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Security-Policy",
+											"value": "connect-src 'self' https:;img-src 'self' data: blob: https://market-assets.strapi.io;media-src 'self' data: blob:;default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline'"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "no-referrer"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000; includeSubDomains"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-DNS-Prefetch-Control",
+											"value": "off"
+										},
+										{
+											"key": "X-Download-Options",
+											"value": "noopen"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-Permitted-Cross-Domain-Policies",
+											"value": "none"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": ""
+										},
+										{
+											"key": "Access-Control-Allow-Credentials",
+											"value": "true"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "Strapi <strapi.io>"
+										},
+										{
+											"key": "Content-Length",
+											"value": "5953"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 14 Jul 2024 15:14:37 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"attributes\": {\n                \"title\": \"Semana de la ingenieria\",\n                \"description\": \"Semana de la ingenieria a celebrarse desde el 15 al 19 de julio de 2023\",\n                \"date_start\": \"2024-07-15\",\n                \"date_end\": \"2024-07-19\",\n                \"time_start\": \"10:00:00.000\",\n                \"time_end\": \"22:00:00.000\",\n                \"location\": \"Universidad Interamericana Panama\",\n                \"createdAt\": \"2024-07-08T03:17:47.232Z\",\n                \"updatedAt\": \"2024-07-13T22:49:03.768Z\",\n                \"publishedAt\": \"2024-07-08T03:26:19.382Z\",\n                \"type_event\": \"Exposición\",\n                \"keywords\": \"ingenieria, panama, uip\",\n                \"external_link\": null\n            }\n        },\n        {\n            \"id\": 2,\n            \"attributes\": {\n                \"title\": \"Hackaton\",\n                \"description\": \"Hackaton a celebrarse el 19 de octubre de 2024\",\n                \"date_start\": \"2024-10-19\",\n                \"date_end\": null,\n                \"time_start\": \"10:00:00.000\",\n                \"time_end\": null,\n                \"location\": \"Universidad Interamericana Panama\",\n                \"createdAt\": \"2024-07-11T03:16:36.789Z\",\n                \"updatedAt\": \"2024-07-11T03:16:36.789Z\",\n                \"publishedAt\": \"2024-07-11T03:16:36.782Z\",\n                \"type_event\": \"Competencia\",\n                \"keywords\": \"ingenieria, panama, uip\",\n                \"external_link\": null\n            }\n        },\n        {\n            \"id\": 23,\n            \"attributes\": {\n                \"title\": \"Feria de Empleo\",\n                \"description\": \"Feria de empleo con diversas empresas panameñas.\",\n                \"date_start\": \"2024-08-01\",\n                \"date_end\": \"2024-08-01\",\n                \"time_start\": \"09:00:00.000\",\n                \"time_end\": \"17:00:00.000\",\n                \"location\": \"Centro de Convenciones ATLAPA\",\n                \"createdAt\": \"2024-07-14T03:56:28.000Z\",\n                \"updatedAt\": \"2024-07-14T03:56:28.000Z\",\n                \"publishedAt\": \"2024-07-14T03:56:28.000Z\",\n                \"type_event\": \"Feria\",\n                \"keywords\": \"empleo,feria,empresas\",\n                \"external_link\": \"https://www.feriadeempleo.com\"\n            }\n        },\n        {\n            \"id\": 24,\n            \"attributes\": {\n                \"title\": \"Concierto de Verano\",\n                \"description\": \"Concierto al aire libre en la Cinta Costera.\",\n                \"date_start\": \"2024-09-15\",\n                \"date_end\": \"2024-09-15\",\n                \"time_start\": \"18:00:00.000\",\n                \"time_end\": \"23:00:00.000\",\n                \"location\": \"Cinta Costera\",\n                \"createdAt\": \"2024-07-14T03:56:28.000Z\",\n                \"updatedAt\": \"2024-07-14T03:56:28.000Z\",\n                \"publishedAt\": \"2024-07-14T03:56:28.000Z\",\n                \"type_event\": \"Concierto\",\n                \"keywords\": \"musica,verano,concierto\",\n                \"external_link\": \"https://www.conciertodeverano.com\"\n            }\n        },\n        {\n            \"id\": 25,\n            \"attributes\": {\n                \"title\": \"Maratón Ciudad de Panamá\",\n                \"description\": \"Maratón anual por las calles de la ciudad.\",\n                \"date_start\": \"2024-11-10\",\n                \"date_end\": \"2024-11-10\",\n                \"time_start\": \"06:00:00.000\",\n                \"time_end\": \"12:00:00.000\",\n                \"location\": \"Ciudad de Panamá\",\n                \"createdAt\": \"2024-07-14T03:56:28.000Z\",\n                \"updatedAt\": \"2024-07-14T03:56:28.000Z\",\n                \"publishedAt\": \"2024-07-14T03:56:28.000Z\",\n                \"type_event\": \"Deportes\",\n                \"keywords\": \"maratón,deportes,salud\",\n                \"external_link\": \"https://www.maratonpanama.com\"\n            }\n        },\n        {\n            \"id\": 26,\n            \"attributes\": {\n                \"title\": \"Exposición de Arte\",\n                \"description\": \"Exposición de arte contemporáneo.\",\n                \"date_start\": \"2024-10-05\",\n                \"date_end\": \"2024-10-20\",\n                \"time_start\": \"10:00:00.000\",\n                \"time_end\": \"18:00:00.000\",\n                \"location\": \"Museo de Arte Contemporáneo\",\n                \"createdAt\": \"2024-07-14T03:56:28.000Z\",\n                \"updatedAt\": \"2024-07-14T03:56:28.000Z\",\n                \"publishedAt\": \"2024-07-14T03:56:28.000Z\",\n                \"type_event\": \"Exposición\",\n                \"keywords\": \"arte,exposición,cultura\",\n                \"external_link\": \"https://www.expoarte.com\"\n            }\n        },\n        {\n            \"id\": 27,\n            \"attributes\": {\n                \"title\": \"Seminario de Tecnología\",\n                \"description\": \"Seminario sobre las últimas tendencias en tecnología.\",\n                \"date_start\": \"2024-09-25\",\n                \"date_end\": \"2024-09-27\",\n                \"time_start\": \"09:00:00.000\",\n                \"time_end\": \"17:00:00.000\",\n                \"location\": \"Hotel El Panamá\",\n                \"createdAt\": \"2024-07-14T03:56:28.000Z\",\n                \"updatedAt\": \"2024-07-14T03:56:28.000Z\",\n                \"publishedAt\": \"2024-07-14T03:56:28.000Z\",\n                \"type_event\": \"Seminario\",\n                \"keywords\": \"tecnología,seminario,innovación\",\n                \"external_link\": \"https://www.tecnoseminario.com\"\n            }\n        },\n        {\n            \"id\": 28,\n            \"attributes\": {\n                \"title\": \"Festival Gastronómico\",\n                \"description\": \"Festival con los mejores chefs de Panamá.\",\n                \"date_start\": \"2024-12-01\",\n                \"date_end\": \"2024-12-01\",\n                \"time_start\": \"12:00:00.000\",\n                \"time_end\": \"20:00:00.000\",\n                \"location\": \"Casco Viejo\",\n                \"createdAt\": \"2024-07-14T03:56:28.000Z\",\n                \"updatedAt\": \"2024-07-14T03:56:28.000Z\",\n                \"publishedAt\": \"2024-07-14T03:56:28.000Z\",\n                \"type_event\": \"Festival\",\n                \"keywords\": \"gastronomía,festival,comida\",\n                \"external_link\": \"https://www.festivalgastronomico.com\"\n            }\n        },\n        {\n            \"id\": 29,\n            \"attributes\": {\n                \"title\": \"Taller de Fotografía\",\n                \"description\": \"Taller práctico de fotografía para principiantes.\",\n                \"date_start\": \"2024-08-15\",\n                \"date_end\": \"2024-08-16\",\n                \"time_start\": \"09:00:00.000\",\n                \"time_end\": \"16:00:00.000\",\n                \"location\": \"Universidad de Panamá\",\n                \"createdAt\": \"2024-07-14T03:56:28.000Z\",\n                \"updatedAt\": \"2024-07-14T03:56:28.000Z\",\n                \"publishedAt\": \"2024-07-14T03:56:28.000Z\",\n                \"type_event\": \"Taller\",\n                \"keywords\": \"fotografía,taller,arte\",\n                \"external_link\": \"https://www.tallerfotografia.com\"\n            }\n        },\n        {\n            \"id\": 30,\n            \"attributes\": {\n                \"title\": \"Conferencia de Medicina\",\n                \"description\": \"Conferencia sobre avances en medicina.\",\n                \"date_start\": \"2024-10-10\",\n                \"date_end\": \"2024-10-12\",\n                \"time_start\": \"08:00:00.000\",\n                \"time_end\": \"17:00:00.000\",\n                \"location\": \"Hospital Nacional\",\n                \"createdAt\": \"2024-07-14T03:56:28.000Z\",\n                \"updatedAt\": \"2024-07-14T03:56:28.000Z\",\n                \"publishedAt\": \"2024-07-14T03:56:28.000Z\",\n                \"type_event\": \"Conferencia\",\n                \"keywords\": \"medicina,salud,conferencia\",\n                \"external_link\": \"https://www.conferenciamedicina.com\"\n            }\n        },\n        {\n            \"id\": 31,\n            \"attributes\": {\n                \"title\": \"Encuentro de Emprendedores\",\n                \"description\": \"Encuentro para compartir ideas y experiencias entre emprendedores.\",\n                \"date_start\": \"2024-11-05\",\n                \"date_end\": \"2024-11-06\",\n                \"time_start\": \"09:00:00.000\",\n                \"time_end\": \"18:00:00.000\",\n                \"location\": \"Parque Omar\",\n                \"createdAt\": \"2024-07-14T03:56:28.000Z\",\n                \"updatedAt\": \"2024-07-14T03:56:28.000Z\",\n                \"publishedAt\": \"2024-07-14T03:56:28.000Z\",\n                \"type_event\": \"Encuentro\",\n                \"keywords\": \"emprendedores,negocios,innovación\",\n                \"external_link\": \"https://www.encuentroemprendedores.com\"\n            }\n        },\n        {\n            \"id\": 32,\n            \"attributes\": {\n                \"title\": \"Curso de Programación\",\n                \"description\": \"Curso intensivo de programación para jóvenes.\",\n                \"date_start\": \"2024-12-10\",\n                \"date_end\": \"2024-12-14\",\n                \"time_start\": \"09:00:00.000\",\n                \"time_end\": \"15:00:00.000\",\n                \"location\": \"Academia Tech\",\n                \"createdAt\": \"2024-07-14T03:56:28.000Z\",\n                \"updatedAt\": \"2024-07-14T03:56:28.000Z\",\n                \"publishedAt\": \"2024-07-14T03:56:28.000Z\",\n                \"type_event\": \"Curso\",\n                \"keywords\": \"programación,tecnología,educación\",\n                \"external_link\": \"https://www.cursodeprogramacion.com\"\n            }\n        }\n    ],\n    \"meta\": {\n        \"pagination\": {\n            \"page\": 1,\n            \"pageSize\": 25,\n            \"pageCount\": 1,\n            \"total\": 12\n        }\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "eventos_uno",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/events/:{id}/",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"events",
+										":{id}",
+										""
+									],
+									"variable": [
+										{
+											"key": "{id}",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "resultado eventos_uno",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url}}/api/events/:{id}/",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"events",
+												":{id}",
+												""
+											],
+											"variable": [
+												{
+													"key": "{id}",
+													"value": "1"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Security-Policy",
+											"value": "connect-src 'self' https:;img-src 'self' data: blob: https://market-assets.strapi.io;media-src 'self' data: blob:;default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline'"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "no-referrer"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000; includeSubDomains"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-DNS-Prefetch-Control",
+											"value": "off"
+										},
+										{
+											"key": "X-Download-Options",
+											"value": "noopen"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-Permitted-Cross-Domain-Policies",
+											"value": "none"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": ""
+										},
+										{
+											"key": "Access-Control-Allow-Credentials",
+											"value": "true"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "Strapi <strapi.io>"
+										},
+										{
+											"key": "Content-Length",
+											"value": "519"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 14 Jul 2024 15:15:07 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": {\n        \"id\": 1,\n        \"attributes\": {\n            \"title\": \"Semana de la ingenieria\",\n            \"description\": \"Semana de la ingenieria a celebrarse desde el 15 al 19 de julio de 2023\",\n            \"date_start\": \"2024-07-15\",\n            \"date_end\": \"2024-07-19\",\n            \"time_start\": \"10:00:00.000\",\n            \"time_end\": \"22:00:00.000\",\n            \"location\": \"Universidad Interamericana Panama\",\n            \"createdAt\": \"2024-07-08T03:17:47.232Z\",\n            \"updatedAt\": \"2024-07-13T22:49:03.768Z\",\n            \"publishedAt\": \"2024-07-08T03:26:19.382Z\",\n            \"type_event\": \"Exposición\",\n            \"keywords\": \"ingenieria, panama, uip\",\n            \"external_link\": null\n        }\n    },\n    \"meta\": {}\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "informacion pagina proyectos",
+					"item": [
+						{
+							"name": "endpoint para tarjetas proyectos",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/proyects/?fields[0]=id&fields[1]=title&fields[2]=description&fields[3]=date_start&fields[4]=skill&fields[5]=author",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"proyects",
+										""
+									],
+									"query": [
+										{
+											"key": "fields[0]",
+											"value": "id"
+										},
+										{
+											"key": "fields[1]",
+											"value": "title"
+										},
+										{
+											"key": "fields[2]",
+											"value": "description"
+										},
+										{
+											"key": "fields[3]",
+											"value": "date_start"
+										},
+										{
+											"key": "fields[4]",
+											"value": "skill"
+										},
+										{
+											"key": "fields[5]",
+											"value": "author"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "resultado endpoint para tarjetas proyectos",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url}}/api/proyects/?fields[0]=id&fields[1]=title&fields[2]=description&fields[3]=date_start&fields[4]=skill&fields[5]=author",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"proyects",
+												""
+											],
+											"query": [
+												{
+													"key": "fields[0]",
+													"value": "id"
+												},
+												{
+													"key": "fields[1]",
+													"value": "title"
+												},
+												{
+													"key": "fields[2]",
+													"value": "description"
+												},
+												{
+													"key": "fields[3]",
+													"value": "date_start"
+												},
+												{
+													"key": "fields[4]",
+													"value": "skill"
+												},
+												{
+													"key": "fields[5]",
+													"value": "author"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Security-Policy",
+											"value": "connect-src 'self' https:;img-src 'self' data: blob: https://market-assets.strapi.io;media-src 'self' data: blob:;default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline'"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "no-referrer"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000; includeSubDomains"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-DNS-Prefetch-Control",
+											"value": "off"
+										},
+										{
+											"key": "X-Download-Options",
+											"value": "noopen"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-Permitted-Cross-Domain-Policies",
+											"value": "none"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": ""
+										},
+										{
+											"key": "Access-Control-Allow-Credentials",
+											"value": "true"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "Strapi <strapi.io>"
+										},
+										{
+											"key": "Content-Length",
+											"value": "2842"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 14 Jul 2024 15:17:04 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"attributes\": {\n                \"title\": \"Growing Up\",\n                \"description\": \"proyecto para la semana de la ingenieria donde se creara una aplicacion web de estudiantes\",\n                \"date_start\": \"2024-07-15\",\n                \"skill\": \"programacion, frontend, backend, ui/ux, marketing.\",\n                \"author\": \"ULIANO PAZ \"\n            }\n        },\n        {\n            \"id\": 22,\n            \"attributes\": {\n                \"title\": \"Desarrollo de Aplicación Móvil\",\n                \"description\": \"Proyecto para desarrollar una aplicación móvil para la gestión de tareas.\",\n                \"date_start\": \"2024-08-01\",\n                \"skill\": \"Programación, UX/UI, Gestión de Proyectos\",\n                \"author\": \"Juan Pérez\"\n            }\n        },\n        {\n            \"id\": 23,\n            \"attributes\": {\n                \"title\": \"Investigación de Mercado\",\n                \"description\": \"Proyecto para investigar las tendencias del mercado en Panamá.\",\n                \"date_start\": \"2024-09-01\",\n                \"skill\": \"Análisis de Datos, Investigación, Marketing\",\n                \"author\": \"María González\"\n            }\n        },\n        {\n            \"id\": 24,\n            \"attributes\": {\n                \"title\": \"Campaña de Marketing\",\n                \"description\": \"Proyecto para crear una campaña de marketing para un nuevo producto.\",\n                \"date_start\": \"2024-10-01\",\n                \"skill\": \"Creatividad, Publicidad, Gestión de Proyectos\",\n                \"author\": \"Carlos Rodríguez\"\n            }\n        },\n        {\n            \"id\": 25,\n            \"attributes\": {\n                \"title\": \"Desarrollo de Software\",\n                \"description\": \"Proyecto para desarrollar un software de gestión empresarial.\",\n                \"date_start\": \"2024-08-15\",\n                \"skill\": \"Programación, Análisis de Sistemas, Gestión de Proyectos\",\n                \"author\": \"Ana López\"\n            }\n        },\n        {\n            \"id\": 26,\n            \"attributes\": {\n                \"title\": \"Diseño de Producto\",\n                \"description\": \"Proyecto para diseñar un nuevo producto innovador.\",\n                \"date_start\": \"2024-09-15\",\n                \"skill\": \"Diseño Industrial, Creatividad, Prototipado\",\n                \"author\": \"José Martínez\"\n            }\n        },\n        {\n            \"id\": 27,\n            \"attributes\": {\n                \"title\": \"Implementación de ERP\",\n                \"description\": \"Proyecto para implementar un sistema ERP en una empresa.\",\n                \"date_start\": \"2024-10-01\",\n                \"skill\": \"Análisis de Sistemas, Gestión de Proyectos, Programación\",\n                \"author\": \"Lucía Hernández\"\n            }\n        },\n        {\n            \"id\": 28,\n            \"attributes\": {\n                \"title\": \"Desarrollo de Página Web\",\n                \"description\": \"Proyecto para desarrollar una nueva página web para una empresa.\",\n                \"date_start\": \"2024-08-01\",\n                \"skill\": \"Programación, Diseño Web, UX/UI\",\n                \"author\": \"Miguel Ramírez\"\n            }\n        },\n        {\n            \"id\": 29,\n            \"attributes\": {\n                \"title\": \"Automatización de Procesos\",\n                \"description\": \"Proyecto para automatizar procesos administrativos.\",\n                \"date_start\": \"2024-09-01\",\n                \"skill\": \"Programación, Análisis de Sistemas, Gestión de Proyectos\",\n                \"author\": \"Elena Ruiz\"\n            }\n        },\n        {\n            \"id\": 30,\n            \"attributes\": {\n                \"title\": \"Investigación Científica\",\n                \"description\": \"Proyecto para investigar nuevos métodos de tratamiento médico.\",\n                \"date_start\": \"2024-08-15\",\n                \"skill\": \"Investigación, Medicina, Análisis de Datos\",\n                \"author\": \"Roberto Torres\"\n            }\n        },\n        {\n            \"id\": 31,\n            \"attributes\": {\n                \"title\": \"Proyecto de Sostenibilidad\",\n                \"description\": \"Proyecto para desarrollar iniciativas sostenibles en la empresa.\",\n                \"date_start\": \"2024-10-01\",\n                \"skill\": \"Gestión Ambiental, Innovación, Proyectos\",\n                \"author\": \"Patricia Vega\"\n            }\n        }\n    ],\n    \"meta\": {\n        \"pagination\": {\n            \"page\": 1,\n            \"pageSize\": 25,\n            \"pageCount\": 1,\n            \"total\": 11\n        }\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "endpoint informacion completa proyecto",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/internships/:{id}/",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"internships",
+										":{id}",
+										""
+									],
+									"variable": [
+										{
+											"key": "{id}",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "resultado endpoint pagina proyecto",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url}}/api/internships/:{id}/",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"internships",
+												":{id}",
+												""
+											],
+											"variable": [
+												{
+													"key": "{id}",
+													"value": "1"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Security-Policy",
+											"value": "connect-src 'self' https:;img-src 'self' data: blob: https://market-assets.strapi.io;media-src 'self' data: blob:;default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline'"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "no-referrer"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000; includeSubDomains"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-DNS-Prefetch-Control",
+											"value": "off"
+										},
+										{
+											"key": "X-Download-Options",
+											"value": "noopen"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-Permitted-Cross-Domain-Policies",
+											"value": "none"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": ""
+										},
+										{
+											"key": "Access-Control-Allow-Credentials",
+											"value": "true"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "Strapi <strapi.io>"
+										},
+										{
+											"key": "Content-Length",
+											"value": "404"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 14 Jul 2024 15:18:12 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": {\n        \"id\": 1,\n        \"attributes\": {\n            \"title\": \"Pasantia\",\n            \"description\": \"pasantia de tecnologia\",\n            \"date_start\": \"2024-08-15\",\n            \"date_end\": \"2024-10-30\",\n            \"requirement\": \"ninguno\",\n            \"work_area\": \"tecnologia\",\n            \"vacancies\": 1,\n            \"keywords\": \"tecnologia, pasantias, Panama Star\",\n            \"company\": \"Panama Star\",\n            \"createdAt\": \"2024-07-11T02:16:46.089Z\",\n            \"updatedAt\": \"2024-07-14T02:46:55.568Z\",\n            \"publishedAt\": \"2024-07-11T02:16:46.079Z\"\n        }\n    },\n    \"meta\": {}\n}"
+								}
+							]
+						},
+						{
+							"name": "proyectos_todos",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/proyects",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"proyects"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "resultado proyectos_todos",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url}}/api/proyects",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"proyects"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Security-Policy",
+											"value": "connect-src 'self' https:;img-src 'self' data: blob: https://market-assets.strapi.io;media-src 'self' data: blob:;default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline'"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "no-referrer"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000; includeSubDomains"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-DNS-Prefetch-Control",
+											"value": "off"
+										},
+										{
+											"key": "X-Download-Options",
+											"value": "noopen"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-Permitted-Cross-Domain-Policies",
+											"value": "none"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": ""
+										},
+										{
+											"key": "Access-Control-Allow-Credentials",
+											"value": "true"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "Strapi <strapi.io>"
+										},
+										{
+											"key": "Content-Length",
+											"value": "5770"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 14 Jul 2024 15:18:46 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"attributes\": {\n                \"title\": \"Growing Up\",\n                \"description\": \"proyecto para la semana de la ingenieria donde se creara una aplicacion web de estudiantes\",\n                \"skill\": \"programacion, frontend, backend, ui/ux, marketing.\",\n                \"goals\": \"ganar primer lugar en la semana de la ingenieria\",\n                \"date_start\": \"2024-07-15\",\n                \"date_end\": \"2024-07-19\",\n                \"author\": \"ULIANO PAZ \",\n                \"status\": \"Pendiente\",\n                \"keywords\": \"ingenieria, panama, uip\",\n                \"createdAt\": \"2024-07-08T03:24:17.134Z\",\n                \"updatedAt\": \"2024-07-08T03:26:12.493Z\",\n                \"publishedAt\": \"2024-07-08T03:26:12.471Z\"\n            }\n        },\n        {\n            \"id\": 22,\n            \"attributes\": {\n                \"title\": \"Desarrollo de Aplicación Móvil\",\n                \"description\": \"Proyecto para desarrollar una aplicación móvil para la gestión de tareas.\",\n                \"skill\": \"Programación, UX/UI, Gestión de Proyectos\",\n                \"goals\": \"Crear una aplicación funcional y fácil de usar.\",\n                \"date_start\": \"2024-08-01\",\n                \"date_end\": \"2024-12-31\",\n                \"author\": \"Juan Pérez\",\n                \"status\": \"En progreso\",\n                \"keywords\": \"aplicación móvil,programación\",\n                \"createdAt\": \"2024-07-14T03:56:57.000Z\",\n                \"updatedAt\": \"2024-07-14T03:56:57.000Z\",\n                \"publishedAt\": \"2024-07-14T03:56:57.000Z\"\n            }\n        },\n        {\n            \"id\": 23,\n            \"attributes\": {\n                \"title\": \"Investigación de Mercado\",\n                \"description\": \"Proyecto para investigar las tendencias del mercado en Panamá.\",\n                \"skill\": \"Análisis de Datos, Investigación, Marketing\",\n                \"goals\": \"Obtener información relevante sobre el mercado.\",\n                \"date_start\": \"2024-09-01\",\n                \"date_end\": \"2024-12-31\",\n                \"author\": \"María González\",\n                \"status\": \"En progreso\",\n                \"keywords\": \"investigación,mercado,análisis\",\n                \"createdAt\": \"2024-07-14T03:56:57.000Z\",\n                \"updatedAt\": \"2024-07-14T03:56:57.000Z\",\n                \"publishedAt\": \"2024-07-14T03:56:57.000Z\"\n            }\n        },\n        {\n            \"id\": 24,\n            \"attributes\": {\n                \"title\": \"Campaña de Marketing\",\n                \"description\": \"Proyecto para crear una campaña de marketing para un nuevo producto.\",\n                \"skill\": \"Creatividad, Publicidad, Gestión de Proyectos\",\n                \"goals\": \"Aumentar la visibilidad y ventas del producto.\",\n                \"date_start\": \"2024-10-01\",\n                \"date_end\": \"2024-11-30\",\n                \"author\": \"Carlos Rodríguez\",\n                \"status\": \"Planeado\",\n                \"keywords\": \"marketing,campaña,publicidad\",\n                \"createdAt\": \"2024-07-14T03:56:57.000Z\",\n                \"updatedAt\": \"2024-07-14T03:56:57.000Z\",\n                \"publishedAt\": \"2024-07-14T03:56:57.000Z\"\n            }\n        },\n        {\n            \"id\": 25,\n            \"attributes\": {\n                \"title\": \"Desarrollo de Software\",\n                \"description\": \"Proyecto para desarrollar un software de gestión empresarial.\",\n                \"skill\": \"Programación, Análisis de Sistemas, Gestión de Proyectos\",\n                \"goals\": \"Crear un software que mejore la eficiencia empresarial.\",\n                \"date_start\": \"2024-08-15\",\n                \"date_end\": \"2024-12-15\",\n                \"author\": \"Ana López\",\n                \"status\": \"En progreso\",\n                \"keywords\": \"software,gestión empresarial\",\n                \"createdAt\": \"2024-07-14T03:56:57.000Z\",\n                \"updatedAt\": \"2024-07-14T03:56:57.000Z\",\n                \"publishedAt\": \"2024-07-14T03:56:57.000Z\"\n            }\n        },\n        {\n            \"id\": 26,\n            \"attributes\": {\n                \"title\": \"Diseño de Producto\",\n                \"description\": \"Proyecto para diseñar un nuevo producto innovador.\",\n                \"skill\": \"Diseño Industrial, Creatividad, Prototipado\",\n                \"goals\": \"Crear un producto atractivo y funcional.\",\n                \"date_start\": \"2024-09-15\",\n                \"date_end\": \"2024-12-15\",\n                \"author\": \"José Martínez\",\n                \"status\": \"Planeado\",\n                \"keywords\": \"diseño,producto,innovación\",\n                \"createdAt\": \"2024-07-14T03:56:57.000Z\",\n                \"updatedAt\": \"2024-07-14T03:56:57.000Z\",\n                \"publishedAt\": \"2024-07-14T03:56:57.000Z\"\n            }\n        },\n        {\n            \"id\": 27,\n            \"attributes\": {\n                \"title\": \"Implementación de ERP\",\n                \"description\": \"Proyecto para implementar un sistema ERP en una empresa.\",\n                \"skill\": \"Análisis de Sistemas, Gestión de Proyectos, Programación\",\n                \"goals\": \"Mejorar la gestión de recursos de la empresa.\",\n                \"date_start\": \"2024-10-01\",\n                \"date_end\": \"2024-12-31\",\n                \"author\": \"Lucía Hernández\",\n                \"status\": \"En progreso\",\n                \"keywords\": \"ERP,sistema,gestión\",\n                \"createdAt\": \"2024-07-14T03:56:57.000Z\",\n                \"updatedAt\": \"2024-07-14T03:56:57.000Z\",\n                \"publishedAt\": \"2024-07-14T03:56:57.000Z\"\n            }\n        },\n        {\n            \"id\": 28,\n            \"attributes\": {\n                \"title\": \"Desarrollo de Página Web\",\n                \"description\": \"Proyecto para desarrollar una nueva página web para una empresa.\",\n                \"skill\": \"Programación, Diseño Web, UX/UI\",\n                \"goals\": \"Crear una página web atractiva y funcional.\",\n                \"date_start\": \"2024-08-01\",\n                \"date_end\": \"2024-11-30\",\n                \"author\": \"Miguel Ramírez\",\n                \"status\": \"En progreso\",\n                \"keywords\": \"página web,diseño,programación\",\n                \"createdAt\": \"2024-07-14T03:56:57.000Z\",\n                \"updatedAt\": \"2024-07-14T03:56:57.000Z\",\n                \"publishedAt\": \"2024-07-14T03:56:57.000Z\"\n            }\n        },\n        {\n            \"id\": 29,\n            \"attributes\": {\n                \"title\": \"Automatización de Procesos\",\n                \"description\": \"Proyecto para automatizar procesos administrativos.\",\n                \"skill\": \"Programación, Análisis de Sistemas, Gestión de Proyectos\",\n                \"goals\": \"Reducir el tiempo y esfuerzo en tareas repetitivas.\",\n                \"date_start\": \"2024-09-01\",\n                \"date_end\": \"2024-12-31\",\n                \"author\": \"Elena Ruiz\",\n                \"status\": \"Planeado\",\n                \"keywords\": \"automatización,procesos,eficiencia\",\n                \"createdAt\": \"2024-07-14T03:56:57.000Z\",\n                \"updatedAt\": \"2024-07-14T03:56:57.000Z\",\n                \"publishedAt\": \"2024-07-14T03:56:57.000Z\"\n            }\n        },\n        {\n            \"id\": 30,\n            \"attributes\": {\n                \"title\": \"Investigación Científica\",\n                \"description\": \"Proyecto para investigar nuevos métodos de tratamiento médico.\",\n                \"skill\": \"Investigación, Medicina, Análisis de Datos\",\n                \"goals\": \"Descubrir tratamientos más efectivos.\",\n                \"date_start\": \"2024-08-15\",\n                \"date_end\": \"2024-12-15\",\n                \"author\": \"Roberto Torres\",\n                \"status\": \"En progreso\",\n                \"keywords\": \"investigación,ciencia,medicina\",\n                \"createdAt\": \"2024-07-14T03:56:57.000Z\",\n                \"updatedAt\": \"2024-07-14T03:56:57.000Z\",\n                \"publishedAt\": \"2024-07-14T03:56:57.000Z\"\n            }\n        },\n        {\n            \"id\": 31,\n            \"attributes\": {\n                \"title\": \"Proyecto de Sostenibilidad\",\n                \"description\": \"Proyecto para desarrollar iniciativas sostenibles en la empresa.\",\n                \"skill\": \"Gestión Ambiental, Innovación, Proyectos\",\n                \"goals\": \"Reducir el impacto ambiental de la empresa.\",\n                \"date_start\": \"2024-10-01\",\n                \"date_end\": \"2024-12-31\",\n                \"author\": \"Patricia Vega\",\n                \"status\": \"Planeado\",\n                \"keywords\": \"sostenibilidad,medio ambiente,innovación\",\n                \"createdAt\": \"2024-07-14T03:56:57.000Z\",\n                \"updatedAt\": \"2024-07-14T03:56:57.000Z\",\n                \"publishedAt\": \"2024-07-14T03:56:57.000Z\"\n            }\n        }\n    ],\n    \"meta\": {\n        \"pagination\": {\n            \"page\": 1,\n            \"pageSize\": 25,\n            \"pageCount\": 1,\n            \"total\": 11\n        }\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "proyectos_uno",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/proyects/:{id}/",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"proyects",
+										":{id}",
+										""
+									],
+									"variable": [
+										{
+											"key": "{id}",
+											"value": "22"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "resultado proyectos_uno",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url}}/api/proyects/:{id}/",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"proyects",
+												":{id}",
+												""
+											],
+											"variable": [
+												{
+													"key": "{id}",
+													"value": "22"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Security-Policy",
+											"value": "connect-src 'self' https:;img-src 'self' data: blob: https://market-assets.strapi.io;media-src 'self' data: blob:;default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline'"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "no-referrer"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000; includeSubDomains"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-DNS-Prefetch-Control",
+											"value": "off"
+										},
+										{
+											"key": "X-Download-Options",
+											"value": "noopen"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-Permitted-Cross-Domain-Policies",
+											"value": "none"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": ""
+										},
+										{
+											"key": "Access-Control-Allow-Credentials",
+											"value": "true"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "Strapi <strapi.io>"
+										},
+										{
+											"key": "Content-Length",
+											"value": "554"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 14 Jul 2024 15:19:54 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": {\n        \"id\": 22,\n        \"attributes\": {\n            \"title\": \"Desarrollo de Aplicación Móvil\",\n            \"description\": \"Proyecto para desarrollar una aplicación móvil para la gestión de tareas.\",\n            \"skill\": \"Programación, UX/UI, Gestión de Proyectos\",\n            \"goals\": \"Crear una aplicación funcional y fácil de usar.\",\n            \"date_start\": \"2024-08-01\",\n            \"date_end\": \"2024-12-31\",\n            \"author\": \"Juan Pérez\",\n            \"status\": \"En progreso\",\n            \"keywords\": \"aplicación móvil,programación\",\n            \"createdAt\": \"2024-07-14T03:56:57.000Z\",\n            \"updatedAt\": \"2024-07-14T03:56:57.000Z\",\n            \"publishedAt\": \"2024-07-14T03:56:57.000Z\"\n        }\n    },\n    \"meta\": {}\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "informacion pagina pasantias",
+					"item": [
+						{
+							"name": "pasantias_todos",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/internships",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"internships"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "resultado pasantias_todos",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url}}/api/internships",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"internships"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Security-Policy",
+											"value": "connect-src 'self' https:;img-src 'self' data: blob: https://market-assets.strapi.io;media-src 'self' data: blob:;default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline'"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "no-referrer"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000; includeSubDomains"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-DNS-Prefetch-Control",
+											"value": "off"
+										},
+										{
+											"key": "X-Download-Options",
+											"value": "noopen"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-Permitted-Cross-Domain-Policies",
+											"value": "none"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": ""
+										},
+										{
+											"key": "Access-Control-Allow-Credentials",
+											"value": "true"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "Strapi <strapi.io>"
+										},
+										{
+											"key": "Content-Length",
+											"value": "5115"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 14 Jul 2024 15:26:12 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"attributes\": {\n                \"title\": \"Pasantia\",\n                \"description\": \"pasantia de tecnologia\",\n                \"date_start\": \"2024-08-15\",\n                \"date_end\": \"2024-10-30\",\n                \"requirement\": \"ninguno\",\n                \"work_area\": \"tecnologia\",\n                \"vacancies\": 1,\n                \"keywords\": \"tecnologia, pasantias, Panama Star\",\n                \"company\": \"Panama Star\",\n                \"createdAt\": \"2024-07-11T02:16:46.089Z\",\n                \"updatedAt\": \"2024-07-14T02:46:55.568Z\",\n                \"publishedAt\": \"2024-07-11T02:16:46.079Z\"\n            }\n        },\n        {\n            \"id\": 22,\n            \"attributes\": {\n                \"title\": \"Pasante en Marketing\",\n                \"description\": \"Oportunidad de aprender y trabajar en el departamento de marketing.\",\n                \"date_start\": \"2024-08-01\",\n                \"date_end\": \"2024-12-31\",\n                \"requirement\": \"Estudiante de últimos años de carrera en Marketing.\",\n                \"work_area\": \"Marketing\",\n                \"vacancies\": 3,\n                \"keywords\": \"marketing,publicidad\",\n                \"company\": \"Agencia Creativa\",\n                \"createdAt\": \"2024-07-14T03:56:47.000Z\",\n                \"updatedAt\": \"2024-07-14T03:56:47.000Z\",\n                \"publishedAt\": \"2024-07-14T03:56:47.000Z\"\n            }\n        },\n        {\n            \"id\": 23,\n            \"attributes\": {\n                \"title\": \"Pasante en Ingeniería\",\n                \"description\": \"Pasantía en el área de ingeniería civil.\",\n                \"date_start\": \"2024-09-01\",\n                \"date_end\": \"2024-11-30\",\n                \"requirement\": \"Estudiante de Ingeniería Civil.\",\n                \"work_area\": \"Ingeniería\",\n                \"vacancies\": 5,\n                \"keywords\": \"ingeniería,civil,construcción\",\n                \"company\": \"Constructora Nacional\",\n                \"createdAt\": \"2024-07-14T03:56:47.000Z\",\n                \"updatedAt\": \"2024-07-14T03:56:47.000Z\",\n                \"publishedAt\": \"2024-07-14T03:56:47.000Z\"\n            }\n        },\n        {\n            \"id\": 24,\n            \"attributes\": {\n                \"title\": \"Pasante en Recursos Humanos\",\n                \"description\": \"Pasantía para apoyar en la gestión de recursos humanos.\",\n                \"date_start\": \"2024-07-15\",\n                \"date_end\": \"2024-12-15\",\n                \"requirement\": \"Estudiante de Psicología o Administración de Empresas.\",\n                \"work_area\": \"Recursos Humanos\",\n                \"vacancies\": 2,\n                \"keywords\": \"recursos humanos,administración\",\n                \"company\": \"Empresa Multinacional\",\n                \"createdAt\": \"2024-07-14T03:56:47.000Z\",\n                \"updatedAt\": \"2024-07-14T03:56:47.000Z\",\n                \"publishedAt\": \"2024-07-14T03:56:47.000Z\"\n            }\n        },\n        {\n            \"id\": 25,\n            \"attributes\": {\n                \"title\": \"Pasante en Diseño Gráfico\",\n                \"description\": \"Pasantía para trabajar en proyectos de diseño gráfico.\",\n                \"date_start\": \"2024-08-15\",\n                \"date_end\": \"2024-11-15\",\n                \"requirement\": \"Estudiante de Diseño Gráfico.\",\n                \"work_area\": \"Diseño Gráfico\",\n                \"vacancies\": 4,\n                \"keywords\": \"diseño gráfico,creatividad\",\n                \"company\": \"Estudio Creativo\",\n                \"createdAt\": \"2024-07-14T03:56:47.000Z\",\n                \"updatedAt\": \"2024-07-14T03:56:47.000Z\",\n                \"publishedAt\": \"2024-07-14T03:56:47.000Z\"\n            }\n        },\n        {\n            \"id\": 26,\n            \"attributes\": {\n                \"title\": \"Pasante en Finanzas\",\n                \"description\": \"Pasantía para apoyar en el área financiera.\",\n                \"date_start\": \"2024-09-01\",\n                \"date_end\": \"2024-12-31\",\n                \"requirement\": \"Estudiante de Contabilidad o Finanzas.\",\n                \"work_area\": \"Finanzas\",\n                \"vacancies\": 3,\n                \"keywords\": \"finanzas,contabilidad,economía\",\n                \"company\": \"Banco Nacional\",\n                \"createdAt\": \"2024-07-14T03:56:47.000Z\",\n                \"updatedAt\": \"2024-07-14T03:56:47.000Z\",\n                \"publishedAt\": \"2024-07-14T03:56:47.000Z\"\n            }\n        },\n        {\n            \"id\": 27,\n            \"attributes\": {\n                \"title\": \"Pasante en Tecnología\",\n                \"description\": \"Pasantía en el área de desarrollo de software.\",\n                \"date_start\": \"2024-08-01\",\n                \"date_end\": \"2024-11-30\",\n                \"requirement\": \"Estudiante de Ingeniería en Sistemas.\",\n                \"work_area\": \"Tecnología\",\n                \"vacancies\": 5,\n                \"keywords\": \"tecnología,software,desarrollo\",\n                \"company\": \"Empresa Tech\",\n                \"createdAt\": \"2024-07-14T03:56:47.000Z\",\n                \"updatedAt\": \"2024-07-14T03:56:47.000Z\",\n                \"publishedAt\": \"2024-07-14T03:56:47.000Z\"\n            }\n        },\n        {\n            \"id\": 28,\n            \"attributes\": {\n                \"title\": \"Pasante en Comunicaciones\",\n                \"description\": \"Pasantía para apoyar en la gestión de comunicaciones internas y externas.\",\n                \"date_start\": \"2024-09-15\",\n                \"date_end\": \"2024-12-15\",\n                \"requirement\": \"Estudiante de Comunicación Social.\",\n                \"work_area\": \"Comunicaciones\",\n                \"vacancies\": 3,\n                \"keywords\": \"comunicaciones,medios\",\n                \"company\": \"Empresa de Medios\",\n                \"createdAt\": \"2024-07-14T03:56:47.000Z\",\n                \"updatedAt\": \"2024-07-14T03:56:47.000Z\",\n                \"publishedAt\": \"2024-07-14T03:56:47.000Z\"\n            }\n        },\n        {\n            \"id\": 29,\n            \"attributes\": {\n                \"title\": \"Pasante en Logística\",\n                \"description\": \"Pasantía en el área de logística y cadena de suministro.\",\n                \"date_start\": \"2024-08-01\",\n                \"date_end\": \"2024-12-31\",\n                \"requirement\": \"Estudiante de Logística o Administración de Empresas.\",\n                \"work_area\": \"Logística\",\n                \"vacancies\": 4,\n                \"keywords\": \"logística,suministros\",\n                \"company\": \"Empresa Logística\",\n                \"createdAt\": \"2024-07-14T03:56:47.000Z\",\n                \"updatedAt\": \"2024-07-14T03:56:47.000Z\",\n                \"publishedAt\": \"2024-07-14T03:56:47.000Z\"\n            }\n        },\n        {\n            \"id\": 30,\n            \"attributes\": {\n                \"title\": \"Pasante en Turismo\",\n                \"description\": \"Pasantía para apoyar en el área de turismo y gestión de eventos.\",\n                \"date_start\": \"2024-10-01\",\n                \"date_end\": \"2024-12-31\",\n                \"requirement\": \"Estudiante de Turismo o Hotelería.\",\n                \"work_area\": \"Turismo\",\n                \"vacancies\": 2,\n                \"keywords\": \"turismo,eventos\",\n                \"company\": \"Agencia de Viajes\",\n                \"createdAt\": \"2024-07-14T03:56:47.000Z\",\n                \"updatedAt\": \"2024-07-14T03:56:47.000Z\",\n                \"publishedAt\": \"2024-07-14T03:56:47.000Z\"\n            }\n        },\n        {\n            \"id\": 31,\n            \"attributes\": {\n                \"title\": \"Pasante en Derecho\",\n                \"description\": \"Pasantía en un bufete de abogados.\",\n                \"date_start\": \"2024-07-15\",\n                \"date_end\": \"2024-12-15\",\n                \"requirement\": \"Estudiante de Derecho.\",\n                \"work_area\": \"Legal\",\n                \"vacancies\": 3,\n                \"keywords\": \"derecho,legal,abogados\",\n                \"company\": \"Bufete de Abogados\",\n                \"createdAt\": \"2024-07-14T03:56:47.000Z\",\n                \"updatedAt\": \"2024-07-14T03:56:47.000Z\",\n                \"publishedAt\": \"2024-07-14T03:56:47.000Z\"\n            }\n        }\n    ],\n    \"meta\": {\n        \"pagination\": {\n            \"page\": 1,\n            \"pageSize\": 25,\n            \"pageCount\": 1,\n            \"total\": 11\n        }\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "pasantias_uno",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/internships/:{id}/",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"internships",
+										":{id}",
+										""
+									],
+									"variable": [
+										{
+											"key": "{id}",
+											"value": "30"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "resultado pasantias_uno",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url}}/api/internships/:{id}/",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"internships",
+												":{id}",
+												""
+											],
+											"variable": [
+												{
+													"key": "{id}",
+													"value": "30"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Security-Policy",
+											"value": "connect-src 'self' https:;img-src 'self' data: blob: https://market-assets.strapi.io;media-src 'self' data: blob:;default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline'"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "no-referrer"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000; includeSubDomains"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-DNS-Prefetch-Control",
+											"value": "off"
+										},
+										{
+											"key": "X-Download-Options",
+											"value": "noopen"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-Permitted-Cross-Domain-Policies",
+											"value": "none"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": ""
+										},
+										{
+											"key": "Access-Control-Allow-Credentials",
+											"value": "true"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "Strapi <strapi.io>"
+										},
+										{
+											"key": "Content-Length",
+											"value": "472"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 14 Jul 2024 15:24:05 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": {\n        \"id\": 30,\n        \"attributes\": {\n            \"title\": \"Pasante en Turismo\",\n            \"description\": \"Pasantía para apoyar en el área de turismo y gestión de eventos.\",\n            \"date_start\": \"2024-10-01\",\n            \"date_end\": \"2024-12-31\",\n            \"requirement\": \"Estudiante de Turismo o Hotelería.\",\n            \"work_area\": \"Turismo\",\n            \"vacancies\": 2,\n            \"keywords\": \"turismo,eventos\",\n            \"company\": \"Agencia de Viajes\",\n            \"createdAt\": \"2024-07-14T03:56:47.000Z\",\n            \"updatedAt\": \"2024-07-14T03:56:47.000Z\",\n            \"publishedAt\": \"2024-07-14T03:56:47.000Z\"\n        }\n    },\n    \"meta\": {}\n}"
+								}
+							]
+						},
+						{
+							"name": "endpoint para tarjetas pasantias",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/internships/?fields[0]=id&fields[1]=title&fields[2]=description&fields[3]=date_start&fields[4]=work_area&fields[5]=company&populate[users_permissions_user][fields][0]=username&populate[users_permissions_user][image][fields][0]=image",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"internships",
+										""
+									],
+									"query": [
+										{
+											"key": "fields[0]",
+											"value": "id"
+										},
+										{
+											"key": "fields[1]",
+											"value": "title"
+										},
+										{
+											"key": "fields[2]",
+											"value": "description"
+										},
+										{
+											"key": "fields[3]",
+											"value": "date_start"
+										},
+										{
+											"key": "fields[4]",
+											"value": "work_area"
+										},
+										{
+											"key": "fields[5]",
+											"value": "company"
+										},
+										{
+											"key": "populate[users_permissions_user][fields][0]",
+											"value": "username"
+										},
+										{
+											"key": "populate[users_permissions_user][image][fields][0]",
+											"value": "image"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "resultado prueba endpoint para tarjetas pasantias",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url}}/api/internships/?fields[0]=id&fields[1]=title&fields[2]=description&fields[3]=date_start&fields[4]=work_area&fields[5]=company&populate[users_permissions_user][fields][0]=username&populate[users_permissions_user][image][fields][0]=image",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"internships",
+												""
+											],
+											"query": [
+												{
+													"key": "fields[0]",
+													"value": "id"
+												},
+												{
+													"key": "fields[1]",
+													"value": "title"
+												},
+												{
+													"key": "fields[2]",
+													"value": "description"
+												},
+												{
+													"key": "fields[3]",
+													"value": "date_start"
+												},
+												{
+													"key": "fields[4]",
+													"value": "work_area"
+												},
+												{
+													"key": "fields[5]",
+													"value": "company"
+												},
+												{
+													"key": "populate[users_permissions_user][fields][0]",
+													"value": "username"
+												},
+												{
+													"key": "populate[users_permissions_user][image][fields][0]",
+													"value": "image"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Security-Policy",
+											"value": "connect-src 'self' https:;img-src 'self' data: blob: https://market-assets.strapi.io;media-src 'self' data: blob:;default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline'"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "no-referrer"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000; includeSubDomains"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-DNS-Prefetch-Control",
+											"value": "off"
+										},
+										{
+											"key": "X-Download-Options",
+											"value": "noopen"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-Permitted-Cross-Domain-Policies",
+											"value": "none"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": ""
+										},
+										{
+											"key": "Access-Control-Allow-Credentials",
+											"value": "true"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "Strapi <strapi.io>"
+										},
+										{
+											"key": "Content-Length",
+											"value": "2832"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 14 Jul 2024 14:57:57 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"attributes\": {\n                \"title\": \"Pasantia\",\n                \"description\": \"pasantia de tecnologia\",\n                \"date_start\": \"2024-08-15\",\n                \"work_area\": \"tecnologia\",\n                \"company\": \"Panama Star\",\n                \"users_permissions_user\": {\n                    \"data\": {\n                        \"id\": 1,\n                        \"attributes\": {\n                            \"username\": \"UlianoMorety\"\n                        }\n                    }\n                }\n            }\n        },\n        {\n            \"id\": 22,\n            \"attributes\": {\n                \"title\": \"Pasante en Marketing\",\n                \"description\": \"Oportunidad de aprender y trabajar en el departamento de marketing.\",\n                \"date_start\": \"2024-08-01\",\n                \"work_area\": \"Marketing\",\n                \"company\": \"Agencia Creativa\",\n                \"users_permissions_user\": {\n                    \"data\": null\n                }\n            }\n        },\n        {\n            \"id\": 23,\n            \"attributes\": {\n                \"title\": \"Pasante en Ingeniería\",\n                \"description\": \"Pasantía en el área de ingeniería civil.\",\n                \"date_start\": \"2024-09-01\",\n                \"work_area\": \"Ingeniería\",\n                \"company\": \"Constructora Nacional\",\n                \"users_permissions_user\": {\n                    \"data\": null\n                }\n            }\n        },\n        {\n            \"id\": 24,\n            \"attributes\": {\n                \"title\": \"Pasante en Recursos Humanos\",\n                \"description\": \"Pasantía para apoyar en la gestión de recursos humanos.\",\n                \"date_start\": \"2024-07-15\",\n                \"work_area\": \"Recursos Humanos\",\n                \"company\": \"Empresa Multinacional\",\n                \"users_permissions_user\": {\n                    \"data\": null\n                }\n            }\n        },\n        {\n            \"id\": 25,\n            \"attributes\": {\n                \"title\": \"Pasante en Diseño Gráfico\",\n                \"description\": \"Pasantía para trabajar en proyectos de diseño gráfico.\",\n                \"date_start\": \"2024-08-15\",\n                \"work_area\": \"Diseño Gráfico\",\n                \"company\": \"Estudio Creativo\",\n                \"users_permissions_user\": {\n                    \"data\": null\n                }\n            }\n        },\n        {\n            \"id\": 26,\n            \"attributes\": {\n                \"title\": \"Pasante en Finanzas\",\n                \"description\": \"Pasantía para apoyar en el área financiera.\",\n                \"date_start\": \"2024-09-01\",\n                \"work_area\": \"Finanzas\",\n                \"company\": \"Banco Nacional\",\n                \"users_permissions_user\": {\n                    \"data\": null\n                }\n            }\n        },\n        {\n            \"id\": 27,\n            \"attributes\": {\n                \"title\": \"Pasante en Tecnología\",\n                \"description\": \"Pasantía en el área de desarrollo de software.\",\n                \"date_start\": \"2024-08-01\",\n                \"work_area\": \"Tecnología\",\n                \"company\": \"Empresa Tech\",\n                \"users_permissions_user\": {\n                    \"data\": null\n                }\n            }\n        },\n        {\n            \"id\": 28,\n            \"attributes\": {\n                \"title\": \"Pasante en Comunicaciones\",\n                \"description\": \"Pasantía para apoyar en la gestión de comunicaciones internas y externas.\",\n                \"date_start\": \"2024-09-15\",\n                \"work_area\": \"Comunicaciones\",\n                \"company\": \"Empresa de Medios\",\n                \"users_permissions_user\": {\n                    \"data\": null\n                }\n            }\n        },\n        {\n            \"id\": 29,\n            \"attributes\": {\n                \"title\": \"Pasante en Logística\",\n                \"description\": \"Pasantía en el área de logística y cadena de suministro.\",\n                \"date_start\": \"2024-08-01\",\n                \"work_area\": \"Logística\",\n                \"company\": \"Empresa Logística\",\n                \"users_permissions_user\": {\n                    \"data\": null\n                }\n            }\n        },\n        {\n            \"id\": 30,\n            \"attributes\": {\n                \"title\": \"Pasante en Turismo\",\n                \"description\": \"Pasantía para apoyar en el área de turismo y gestión de eventos.\",\n                \"date_start\": \"2024-10-01\",\n                \"work_area\": \"Turismo\",\n                \"company\": \"Agencia de Viajes\",\n                \"users_permissions_user\": {\n                    \"data\": null\n                }\n            }\n        },\n        {\n            \"id\": 31,\n            \"attributes\": {\n                \"title\": \"Pasante en Derecho\",\n                \"description\": \"Pasantía en un bufete de abogados.\",\n                \"date_start\": \"2024-07-15\",\n                \"work_area\": \"Legal\",\n                \"company\": \"Bufete de Abogados\",\n                \"users_permissions_user\": {\n                    \"data\": null\n                }\n            }\n        }\n    ],\n    \"meta\": {\n        \"pagination\": {\n            \"page\": 1,\n            \"pageSize\": 25,\n            \"pageCount\": 1,\n            \"total\": 11\n        }\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "endopoint informacion completa pasantias",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/internships/:{id}/",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"internships",
+										":{id}",
+										""
+									],
+									"variable": [
+										{
+											"key": "{id}",
+											"value": "27"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "resultado endopoint informacion completa pasantias",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url}}/api/internships/:{id}/",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"internships",
+												":{id}",
+												""
+											],
+											"variable": [
+												{
+													"key": "{id}",
+													"value": "27"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Security-Policy",
+											"value": "connect-src 'self' https:;img-src 'self' data: blob: https://market-assets.strapi.io;media-src 'self' data: blob:;default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline'"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "no-referrer"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000; includeSubDomains"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-DNS-Prefetch-Control",
+											"value": "off"
+										},
+										{
+											"key": "X-Download-Options",
+											"value": "noopen"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-Permitted-Cross-Domain-Policies",
+											"value": "none"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": ""
+										},
+										{
+											"key": "Access-Control-Allow-Credentials",
+											"value": "true"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "Strapi <strapi.io>"
+										},
+										{
+											"key": "Content-Length",
+											"value": "475"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 14 Jul 2024 15:25:34 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": {\n        \"id\": 27,\n        \"attributes\": {\n            \"title\": \"Pasante en Tecnología\",\n            \"description\": \"Pasantía en el área de desarrollo de software.\",\n            \"date_start\": \"2024-08-01\",\n            \"date_end\": \"2024-11-30\",\n            \"requirement\": \"Estudiante de Ingeniería en Sistemas.\",\n            \"work_area\": \"Tecnología\",\n            \"vacancies\": 5,\n            \"keywords\": \"tecnología,software,desarrollo\",\n            \"company\": \"Empresa Tech\",\n            \"createdAt\": \"2024-07-14T03:56:47.000Z\",\n            \"updatedAt\": \"2024-07-14T03:56:47.000Z\",\n            \"publishedAt\": \"2024-07-14T03:56:47.000Z\"\n        }\n    },\n    \"meta\": {}\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "informacion pagina mentorias",
+					"item": [
+						{
+							"name": "mentorias_todos",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/mentorings/",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"mentorings",
+										""
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "resultados mentorias_todos",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url}}/api/mentorings/",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"mentorings",
+												""
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Security-Policy",
+											"value": "connect-src 'self' https:;img-src 'self' data: blob: https://market-assets.strapi.io;media-src 'self' data: blob:;default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline'"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "no-referrer"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000; includeSubDomains"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-DNS-Prefetch-Control",
+											"value": "off"
+										},
+										{
+											"key": "X-Download-Options",
+											"value": "noopen"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-Permitted-Cross-Domain-Policies",
+											"value": "none"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": ""
+										},
+										{
+											"key": "Access-Control-Allow-Credentials",
+											"value": "true"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "Strapi <strapi.io>"
+										},
+										{
+											"key": "Content-Length",
+											"value": "2735"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 14 Jul 2024 16:22:24 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": [\n        {\n            \"id\": 21,\n            \"attributes\": {\n                \"mentor\": \"Carlos López\",\n                \"aprentice\": \"Ana Pérez\",\n                \"date\": \"2024-08-01\",\n                \"topics\": \"Desarrollo Personal, Habilidades de Comunicación\",\n                \"createdAt\": \"2024-07-14T03:56:57.000Z\",\n                \"updatedAt\": \"2024-07-14T03:56:57.000Z\",\n                \"publishedAt\": \"2024-07-14T03:56:57.000Z\"\n            }\n        },\n        {\n            \"id\": 22,\n            \"attributes\": {\n                \"mentor\": \"María Gómez\",\n                \"aprentice\": \"Luis Martínez\",\n                \"date\": \"2024-08-15\",\n                \"topics\": \"Gestión de Proyectos, Liderazgo\",\n                \"createdAt\": \"2024-07-14T03:56:57.000Z\",\n                \"updatedAt\": \"2024-07-14T03:56:57.000Z\",\n                \"publishedAt\": \"2024-07-14T03:56:57.000Z\"\n            }\n        },\n        {\n            \"id\": 23,\n            \"attributes\": {\n                \"mentor\": \"José Rodríguez\",\n                \"aprentice\": \"Carla Sánchez\",\n                \"date\": \"2024-09-01\",\n                \"topics\": \"Innovación, Emprendimiento\",\n                \"createdAt\": \"2024-07-14T03:56:57.000Z\",\n                \"updatedAt\": \"2024-07-14T03:56:57.000Z\",\n                \"publishedAt\": \"2024-07-14T03:56:57.000Z\"\n            }\n        },\n        {\n            \"id\": 24,\n            \"attributes\": {\n                \"mentor\": \"Ana Torres\",\n                \"aprentice\": \"Miguel Castillo\",\n                \"date\": \"2024-09-15\",\n                \"topics\": \"Finanzas Personales, Inversiones\",\n                \"createdAt\": \"2024-07-14T03:56:57.000Z\",\n                \"updatedAt\": \"2024-07-14T03:56:57.000Z\",\n                \"publishedAt\": \"2024-07-14T03:56:57.000Z\"\n            }\n        },\n        {\n            \"id\": 25,\n            \"attributes\": {\n                \"mentor\": \"Ricardo Díaz\",\n                \"aprentice\": \"Laura Fernández\",\n                \"date\": \"2024-10-01\",\n                \"topics\": \"Marketing Digital, Redes Sociales\",\n                \"createdAt\": \"2024-07-14T03:56:57.000Z\",\n                \"updatedAt\": \"2024-07-14T03:56:57.000Z\",\n                \"publishedAt\": \"2024-07-14T03:56:57.000Z\"\n            }\n        },\n        {\n            \"id\": 26,\n            \"attributes\": {\n                \"mentor\": \"Sofía Méndez\",\n                \"aprentice\": \"Andrés García\",\n                \"date\": \"2024-10-15\",\n                \"topics\": \"Desarrollo Web, Programación\",\n                \"createdAt\": \"2024-07-14T03:56:57.000Z\",\n                \"updatedAt\": \"2024-07-14T03:56:57.000Z\",\n                \"publishedAt\": \"2024-07-14T03:56:57.000Z\"\n            }\n        },\n        {\n            \"id\": 27,\n            \"attributes\": {\n                \"mentor\": \"Pedro Rivas\",\n                \"aprentice\": \"Mónica Ortega\",\n                \"date\": \"2024-11-01\",\n                \"topics\": \"Estrategias de Ventas, Negociación\",\n                \"createdAt\": \"2024-07-14T03:56:57.000Z\",\n                \"updatedAt\": \"2024-07-14T03:56:57.000Z\",\n                \"publishedAt\": \"2024-07-14T03:56:57.000Z\"\n            }\n        },\n        {\n            \"id\": 28,\n            \"attributes\": {\n                \"mentor\": \"Lucía Herrera\",\n                \"aprentice\": \"Jorge Vega\",\n                \"date\": \"2024-11-15\",\n                \"topics\": \"Diseño Gráfico, Creatividad\",\n                \"createdAt\": \"2024-07-14T03:56:57.000Z\",\n                \"updatedAt\": \"2024-07-14T03:56:57.000Z\",\n                \"publishedAt\": \"2024-07-14T03:56:57.000Z\"\n            }\n        },\n        {\n            \"id\": 29,\n            \"attributes\": {\n                \"mentor\": \"Fernando Morales\",\n                \"aprentice\": \"Elena Ríos\",\n                \"date\": \"2024-12-01\",\n                \"topics\": \"Planificación Estratégica, Gestión del Tiempo\",\n                \"createdAt\": \"2024-07-14T03:56:57.000Z\",\n                \"updatedAt\": \"2024-07-14T03:56:57.000Z\",\n                \"publishedAt\": \"2024-07-14T03:56:57.000Z\"\n            }\n        },\n        {\n            \"id\": 30,\n            \"attributes\": {\n                \"mentor\": \"Patricia Ruiz\",\n                \"aprentice\": \"Roberto Jiménez\",\n                \"date\": \"2024-12-15\",\n                \"topics\": \"Inteligencia Emocional, Trabajo en Equipo\",\n                \"createdAt\": \"2024-07-14T03:56:57.000Z\",\n                \"updatedAt\": \"2024-07-14T03:56:57.000Z\",\n                \"publishedAt\": \"2024-07-14T03:56:57.000Z\"\n            }\n        }\n    ],\n    \"meta\": {\n        \"pagination\": {\n            \"page\": 1,\n            \"pageSize\": 25,\n            \"pageCount\": 1,\n            \"total\": 10\n        }\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "mentorias_uno",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/mentorings/:{id}/",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"mentorings",
+										":{id}",
+										""
+									],
+									"variable": [
+										{
+											"key": "{id}",
+											"value": "24"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "resultados mentorias_uno",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url}}/api/mentorings/:{id}/",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"mentorings",
+												":{id}",
+												""
+											],
+											"variable": [
+												{
+													"key": "{id}",
+													"value": "24"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Security-Policy",
+											"value": "connect-src 'self' https:;img-src 'self' data: blob: https://market-assets.strapi.io;media-src 'self' data: blob:;default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline'"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "no-referrer"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000; includeSubDomains"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-DNS-Prefetch-Control",
+											"value": "off"
+										},
+										{
+											"key": "X-Download-Options",
+											"value": "noopen"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-Permitted-Cross-Domain-Policies",
+											"value": "none"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": ""
+										},
+										{
+											"key": "Access-Control-Allow-Credentials",
+											"value": "true"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "Strapi <strapi.io>"
+										},
+										{
+											"key": "Content-Length",
+											"value": "278"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 14 Jul 2024 16:23:41 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": {\n        \"id\": 24,\n        \"attributes\": {\n            \"mentor\": \"Ana Torres\",\n            \"aprentice\": \"Miguel Castillo\",\n            \"date\": \"2024-09-15\",\n            \"topics\": \"Finanzas Personales, Inversiones\",\n            \"createdAt\": \"2024-07-14T03:56:57.000Z\",\n            \"updatedAt\": \"2024-07-14T03:56:57.000Z\",\n            \"publishedAt\": \"2024-07-14T03:56:57.000Z\"\n        }\n    },\n    \"meta\": {}\n}"
+								}
+							]
+						},
+						{
+							"name": "endpoint para tarjetas mentorias",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "AUTENTICATION",
+			"item": [
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"\",///nombre aqui,\r\n    \"email\":\"\", ///su correo aqui,\r\n    \"password\":\"\"///su contrasena aqui\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/auth/local/register",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"local",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"identifier\":\"\",///nombre o correo aqui,\r\n    \"password\":\"\"///su contrasena aqui\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/auth/local",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"local"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "POST",
+			"item": [
+				{
+					"name": "pasantias_agregar",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"data\": {\r\n    \"title\": \"Pasantia\",\r\n    \"description\": \"pasantia de tecnologia\",\r\n    \"date_start\": \"2024-08-15\",\r\n    \"date_end\": \"2024-10-30\",\r\n    \"requirement\": \"ninguno\",\r\n    \"work_area\": \"tecnologia\",\r\n    \"vacancies\": 1,\r\n    \"company\": \"Panama Star\",\r\n    \"keywords\": \"tecnologia, pasantias, Panama Star\"\r\n    }\r\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/internships",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"internships"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "eventos_agregar",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"data\":{\r\n    \"title\": \"Hackaton\",\r\n    \"description\": \"Hackaton a celebrarse el 19 de octubre de 2024\",\r\n    \"date_start\": \"2024-10-19\",\r\n    \"time_start\": \"10:00:00.000\",\r\n    \"location\": \"Universidad Interamericana Panama\",\r\n    \"type_event\": \"Competencia\",\r\n    \"keywords\": \"ingenieria, panama, uip\",\r\n    \"external_link\": null\r\n    }\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/events",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"events"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "proyecto_agregar",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/proyects",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"proyects"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "mentorias_agregar",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/mentorings",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"mentorings"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "PUT",
+			"item": [
+				{
+					"name": "pasantias_actualizar",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"data\": {\r\n    \"title\": \"Pasantia\",\r\n    \"description\": \"pasantia de tecnologia\",\r\n    \"date_start\": \"2024-08-15\",\r\n    \"date_end\": \"2024-10-30\",\r\n    \"requirement\": \"ninguno\",\r\n    \"work_area\": \"tecnologia\",\r\n    \"vacancies\": 1,\r\n    \"company\": \"Panama Star\",\r\n    \"keywords\": \"tecnologia, pasantias, Panama Star\"\r\n    }\r\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/internships/:{id}/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"internships",
+								":{id}",
+								""
+							],
+							"variable": [
+								{
+									"key": "{id}",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "eventos_actualizar",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"data\":{\r\n    \"title\": \"Hackaton\",\r\n    \"description\": \"Hackaton a celebrarse el 19 de octubre de 2024\",\r\n    \"date_start\": \"2024-10-19\",\r\n    \"time_start\": \"10:00:00.000\",\r\n    \"location\": \"Universidad Interamericana Panama\",\r\n    \"type_event\": \"Competencia\",\r\n    \"keywords\": \"ingenieria, panama, uip\",\r\n    \"external_link\": null\r\n    }\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/events/:{id}/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"events",
+								":{id}",
+								""
+							],
+							"variable": [
+								{
+									"key": "{id}",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "eventos_actualizar",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/proyects/:{id}/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"proyects",
+								":{id}",
+								""
+							],
+							"variable": [
+								{
+									"key": "{id}",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "mentorias_actualizar",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/mentorings/:{id}/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"mentorings",
+								":{id}",
+								""
+							],
+							"variable": [
+								{
+									"key": "{id}",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "DELETE",
+			"item": [
+				{
+					"name": "pasantias_borrar",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"data\": {\r\n    \"title\": \"Pasantia\",\r\n    \"description\": \"pasantia de tecnologia\",\r\n    \"date_start\": \"2024-08-15\",\r\n    \"date_end\": \"2024-10-30\",\r\n    \"requirement\": \"ninguno\",\r\n    \"work_area\": \"tecnologia\",\r\n    \"vacancies\": 1,\r\n    \"company\": \"Panama Star\",\r\n    \"keywords\": \"tecnologia, pasantias, Panama Star\"\r\n    }\r\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/internships/:{id}/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"internships",
+								":{id}",
+								""
+							],
+							"variable": [
+								{
+									"key": "{id}",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "eventos_borrar",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"data\":{\r\n    \"title\": \"Hackaton\",\r\n    \"description\": \"Hackaton a celebrarse el 19 de octubre de 2024\",\r\n    \"date_start\": \"2024-10-19\",\r\n    \"time_start\": \"10:00:00.000\",\r\n    \"location\": \"Universidad Interamericana Panama\",\r\n    \"type_event\": \"Competencia\",\r\n    \"keywords\": \"ingenieria, panama, uip\",\r\n    \"external_link\": null\r\n    }\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/events/:{id}/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"events",
+								":{id}",
+								""
+							],
+							"variable": [
+								{
+									"key": "{id}",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "proyectos_borrar",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/proyects/:{id}/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"proyects",
+								":{id}",
+								""
+							],
+							"variable": [
+								{
+									"key": "{id}",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "mentorias_borrar",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/mentorings/:{id}/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"mentorings",
+								":{id}",
+								""
+							],
+							"variable": [
+								{
+									"key": "{id}",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
