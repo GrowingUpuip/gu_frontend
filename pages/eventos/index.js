@@ -27,31 +27,31 @@ const Home = () => {
   return (
     <div>
       {isLoggedIn ? (
-        <div className="container">
-          <nav className="navbar navbar-expand-lg navbar-light bg-light">
-            <a className="navbar-brand" href="#">
+        <div class="container">
+          <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">
               Eventos
             </a>
-            <div className="ml-auto">
+            <div class="ml-auto">
               <Image
                 src="/images/avatar.jpg"
                 alt="juan perez"
                 width={40}
                 height={40}
-                className="rounded-circle"
+                class="rounded-circle"
               />
             </div>
           </nav>
 
-          <div className="row mt-4">
-            <div className="col-sm-3">
-              <ul className="list-group">
+          <div class="row mt-4">
+            <div class="col-sm-3">
+              <ul class="list-group">
                 <Sidebar />
 
-                <li className="list-group-item">
+                <li class="list-group-item">
                   <DatePickerComponent />
                 </li>
-                <li className="card p-2">
+                <li class="card p-2">
                   <Calendar
                     onChange={setValue}
                     value={value}
@@ -66,7 +66,7 @@ const Home = () => {
                 </li>
               </ul>
             </div>
-            <div className="col">
+            <div class="col">
               <EventList />
             </div>
           </div>

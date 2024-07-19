@@ -37,23 +37,23 @@ export default function Login() {
 
   return (
     <div
-      className="container d-flex justify-content-center align-items-center"
+      class="container d-flex justify-content-center align-items-center"
       style={{ height: "100vh" }}
     >
-      <div className="row">
-        <div className="col">
-          <h2 className="mt-4">¡Únete a Growing Up+!😀😃😄😁</h2>
-          <h1 className="text-center mb-4">
+      <div class="row">
+        <div class="col">
+          <h2 class="mt-4">¡Únete a Growing Up+!😀😃😄😁</h2>
+          <h1 class="text-center mb-4">
             Se parte de un mundo donde puedes seguir creciendo
           </h1>
           <form onSubmit={handleSubmit}>
-            <div className="mb-3">
-              <label htmlFor="email" className="form-label">
+            <div class="mb-3">
+              <label htmlFor="email" class="form-label">
                 Email
               </label>
               <input
                 type="email"
-                className="form-control"
+                class="form-control"
                 id="email"
                 placeholder="Enter email"
                 value={email}
@@ -62,13 +62,13 @@ export default function Login() {
               />
             </div>
 
-            <div className="mb-3">
-              <label htmlFor="password" className="form-label">
+            <div class="mb-3">
+              <label htmlFor="password" class="form-label">
                 Contraseña
               </label>
               <input
                 type="password"
-                className="form-control"
+                class="form-control"
                 id="password"
                 placeholder="Password"
                 value={password}
@@ -77,14 +77,14 @@ export default function Login() {
               />
             </div>
 
-            <div className="text-center">
-              <button type="submit" className="btn btn-primary mb-3">
+            <div class="text-center">
+              <button type="submit" class="btn btn-primary mb-3">
                 Aceptar y Ingresar
               </button>
               <p>O</p>
               <button
                 type="button"
-                className="btn btn-outline-secondary mb-3 d-flex align-items-center justify-content-center mx-auto"
+                class="btn btn-outline-secondary mb-3 d-flex align-items-center justify-content-center mx-auto"
               >
                 <Image
                   src="/images/Google__G__logo.svg.png"
@@ -97,7 +97,7 @@ export default function Login() {
               </button>
             </div>
           </form>
-          <div className="text-center mt-3">
+          <div class="text-center mt-3">
             <Link href="/registrarse" legacyBehavior>
               <a>¿No tienes cuenta? Click Aquí</a>
             </Link>

@@ -11,7 +11,7 @@ export default function Anuncio() {
   const [showModal, setShowModal] = useState(false);
   const [eventoSeleccionado, setEventoSeleccionado] = useState("");
   const [eventos, setEventos] = useState([]);
-  const [eventoDestacado, setEventoDestacado] = useState(null);
+  const [eventoDestacado, setEventoDestacado] = useState(null); 
 
   useEffect(() => {
     // Verificar si el usuario está autenticado al cargar la página
@@ -35,6 +35,7 @@ export default function Anuncio() {
         }
       );
       const data = await response.json();
+      console.log(data)
       if (data?.data) {
         setEventos(data.data);
 
@@ -95,8 +96,8 @@ export default function Anuncio() {
             <link rel="icon" href="/favicon.ico" />
           </Head>
 
-          <header className="hero">
-            <div className="hero-content">
+          <header class="hero">
+            <div class="hero-content">
               <h1>Explora nuestros próximos eventos y competencias</h1>
               <p>
                 Desde hackatones hasta seminarios, hay algo para todos.
@@ -105,13 +106,13 @@ export default function Anuncio() {
             </div>
           </header>
 
-          <main className="container">
+          <main class="container">
             {eventoDestacado && (
-              <section className="event-highlight">
-                <div className="event-card">
+              <section class="event-highlight">
+                <div class="event-card">
                   <h2>{eventoDestacado.attributes.title}</h2>
                   <p>{eventoDestacado.attributes.description}</p>
-                  <button className="btn btn-primary" onClick={openModal}>
+                  <button class="btn btn-primary" onClick={openModal}>
                     Participa
                   </button>
                 </div>
@@ -127,18 +128,18 @@ export default function Anuncio() {
               />
             )}
 
-            <section className="more-events">
+            <section class="more-events">
               <h3>Más Eventos</h3>
-              <div className="event-list">
+              <div class="event-list">
                 {eventos?.map((evento) => (
-                  <div key={evento.id} className="event-item">
-                    <div className="event-thumbnail"></div>
-                    <div className="event-details">
+                  <div key={evento.id} class="event-item">
+                    <div class="event-thumbnail"></div>
+                    <div class="event-details">
                       <h4>{evento.attributes.title}</h4>
                       <p>{evento.attributes.description}</p>
                       <p>
                         <button
-                          className="btn btn-primary"
+                          class="btn btn-primary"
                           onClick={() => openModal(evento.id)}
                         >
                           Participar

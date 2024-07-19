@@ -33,14 +33,14 @@ const Registrarse = () => {
   };
 
   return (
-    <main className="container d-flex justify-content-center align-items-center">
+    <main class="container d-flex justify-content-center align-items-center">
       <form onSubmit={handleSubmit}>
         <Image
           src="/images/logo.png"
           alt="Google"
           width={70}
           height={70}
-          className="mb-4"
+          class="mb-4"
         />
         <h1 class="h3 mb-3 fw-normal">Registrarse</h1>
 

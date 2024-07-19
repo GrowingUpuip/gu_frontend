@@ -1,7 +1,7 @@
 import Head from "next/head";
 import { useState, useEffect } from "react";
 import Modal from "./modal";
-import { oportunidades } from "./data";
+// import { DATA_OPORTUNIDAD } from "./data";
 import { useAuth } from "../../components/authContext";
 
 import { useRouter } from "next/router";
@@ -64,8 +64,8 @@ export default function Oportunidades() {
             <link rel="icon" href="/images/logo2.jpeg" />
           </Head>
 
-          <header className="hero">
-            <div className="hero-content">
+          <header class="hero">
+            <div class="hero-content">
               <h1>Descubre oportunidades de prácticas y empleos</h1>
               <p>
                 que te permitirán ganar experiencia valiosa y avanzar en tu
@@ -74,15 +74,15 @@ export default function Oportunidades() {
             </div>
           </header>
 
-          <main className="container">
-            <section className="highlight">
-              <div className="highlight-card">
+          <main class="container">
+            <section class="highlight">
+              <div class="highlight-card">
                 <h2>ERP (Enterprise Resource Planning)</h2>
                 <p>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
                   do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                 </p>
-                <button className="btn btn-primary" onClick={openModal}>
+                <button class="btn btn-primary" onClick={openModal}>
                   Aplica ya
                 </button>
               </div>
@@ -95,13 +95,13 @@ export default function Oportunidades() {
                 handleSubmit={handleSubmit}
               />
             )}
-            <section className="more-opportunities">
+            <section class="more-opportunities">
               <h3>Otras oportunidades</h3>
-              <div className="opportunity-list">
+              <div class="opportunity-list">
                 {oportunidades?.map((oportunidad) => (
-                  <div key={oportunidad.id} className="opportunity-item">
-                    <div className="opportunity-thumbnail"></div>
-                    <div className="opportunity-details">
+                  <div key={oportunidad.id} class="opportunity-item">
+                    <div class="opportunity-thumbnail"></div>
+                    <div class="opportunity-details">
                       <h4>{oportunidad.titulo}</h4>
                       <p>{oportunidad.descripcion}</p>
                     </div>

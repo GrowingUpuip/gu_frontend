@@ -6,7 +6,7 @@ function Users({users}) {
             {users.map((user,index) => (
                 <Link href={`/users/${user.id}`} key={index}>
                     {/* <User user={user} /> */}
-                    <h2 className='username'>{user.name}</h2>
+                    <h2 class='username'>{user.name}</h2>
                 </Link>
             ))}
         </div>

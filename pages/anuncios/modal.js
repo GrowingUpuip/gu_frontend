@@ -18,28 +18,30 @@ const Modal = ({ eventos, showModal, closeModal, handleSubmit }) => {
     handleSubmit({ nombre, correo, eventoSeleccionado });
   };
 
-  return (
-    <div
-      className={`modal ${showModal ? "show" : ""}`}
+  return ( 
+    <div> 
+    { eventos ? (    
+      <div
+      class={`modal ${showModal ? "show" : ""}`}
       tabIndex="-1"
       role="dialog"
       style={{ display: showModal ? "block" : "none" }}
     >
-      <div className="modal-dialog modal-dialog-centered" role="document">
-        <div className="modal-content">
-          <div className="modal-header">
-            <h5 className="modal-title">Registro</h5>
-            <button type="button" className="close" onClick={closeModal}>
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Registro</h5>
+            <button type="button" class="close" onClick={closeModal}>
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-          <div className="modal-body">
+          <div class="modal-body">
             <form onSubmit={handleFormSubmit}>
-              <div className="form-group">
+              <div class="form-group">
                 <label htmlFor="eventoSelect">Selecciona un evento</label>
                 <select
                   id="eventoSelect"
-                  className="form-control"
+                  class="form-control"
                   value={eventoSeleccionado ? eventoSeleccionado.id : ""}
                   onChange={handleEventoChange}
                   required
@@ -52,11 +54,11 @@ const Modal = ({ eventos, showModal, closeModal, handleSubmit }) => {
                   ))}
                 </select>
               </div>
-              <div className="form-group">
+              <div class="form-group">
                 <label htmlFor="nombreInput">Nombre</label>
                 <input
                   type="text"
-                  className="form-control"
+                  class="form-control"
                   id="nombreInput"
                   placeholder="Nombre"
                   value={nombre}
@@ -64,11 +66,11 @@ const Modal = ({ eventos, showModal, closeModal, handleSubmit }) => {
                   required
                 />
               </div>
-              <div className="form-group">
+              <div class="form-group">
                 <label htmlFor="correoInput">Correo electrónico</label>
                 <input
                   type="email"
-                  className="form-control"
+                  class="form-control"
                   id="correoInput"
                   placeholder="Correo electrónico"
                   value={correo}
@@ -76,7 +78,7 @@ const Modal = ({ eventos, showModal, closeModal, handleSubmit }) => {
                   required
                 />
               </div>
-              <button type="submit" className="btn btn-primary">
+              <button type="submit" class="btn btn-primary">
                 Registrar
               </button>
             </form>
@@ -161,6 +163,8 @@ const Modal = ({ eventos, showModal, closeModal, handleSubmit }) => {
           color: #000;
         }
       `}</style>
+    </div>
+  ):  null}
     </div>
   );
 };

@@ -87,54 +87,54 @@ const EventForm = () => {
   };
 
   return (
-    <div className="container">
+    <div class="container">
       <nav aria-label="breadcrumb">
-        <ol className="breadcrumb">
-          <li className="breadcrumb-item">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item">
             <Link href="/eventos" legacyBehavior>
               <a>Eventos</a>
             </Link>
           </li>
-          <li className="breadcrumb-item active" aria-current="page">
+          <li class="breadcrumb-item active" aria-current="page">
             Registrar evento
           </li>
         </ol>
       </nav>
-      <main className="container d-flex justify-content-center align-items-center">
-        <div className="col-md-7 col-lg-8">
-          <h1 className="h3">Registrar evento</h1>
+      <main class="container d-flex justify-content-center align-items-center">
+        <div class="col-md-7 col-lg-8">
+          <h1 class="h3">Registrar evento</h1>
           <form onSubmit={handleSubmit(onSubmit)}>
-            <div className="row">
-              <div className="col-12">
-                <label className="form-label" htmlFor="title">
+            <div class="row">
+              <div class="col-12">
+                <label class="form-label" htmlFor="title">
                   Title
                 </label>
                 <input
-                  className="form-control"
+                  class="form-control"
                   id="title"
                   {...register("title", { required: true })}
                 />
                 {errors.title && <span>Title is required</span>}
               </div>
 
-              <div className="col-12">
-                <label className="form-label" htmlFor="description">
+              <div class="col-12">
+                <label class="form-label" htmlFor="description">
                   Description
                 </label>
                 <input
-                  className="form-control"
+                  class="form-control"
                   id="description"
                   {...register("description", { required: true })}
                 />
                 {errors.description && <span>Description is required</span>}
               </div>
 
-              <div className="col-12">
-                <label className="form-label" htmlFor="date_start">
+              <div class="col-12">
+                <label class="form-label" htmlFor="date_start">
                   Date Start
                 </label>
                 <input
-                  className="form-control"
+                  class="form-control"
                   id="date_start"
                   type="date"
                   {...register("date_start", { required: true })}
@@ -142,12 +142,12 @@ const EventForm = () => {
                 {errors.date_start && <span>Date Start is required</span>}
               </div>
 
-              <div className="col-12">
-                <label className="form-label" htmlFor="time_start">
+              <div class="col-12">
+                <label class="form-label" htmlFor="time_start">
                   Time Start
                 </label>
                 <input
-                  className="form-control"
+                  class="form-control"
                   id="time_start"
                   type="time"
                   {...register("time_start", { required: true })}
@@ -155,44 +155,44 @@ const EventForm = () => {
                 {errors.time_start && <span>Time Start is required</span>}
               </div>
 
-              <div className="col-12">
-                <label className="form-label" htmlFor="location">
+              <div class="col-12">
+                <label class="form-label" htmlFor="location">
                   Location
                 </label>
                 <input
-                  className="form-control"
+                  class="form-control"
                   id="location"
                   {...register("location", { required: true })}
                 />
                 {errors.location && <span>Location is required</span>}
               </div>
 
-              <div className="col-12">
-                <label className="form-label" htmlFor="type_event">
+              <div class="col-12">
+                <label class="form-label" htmlFor="type_event">
                   Type Event
                 </label>
                 <input
-                  className="form-control"
+                  class="form-control"
                   id="type_event"
                   {...register("type_event", { required: true })}
                 />
                 {errors.type_event && <span>Type Event is required</span>}
               </div>
 
-              <div className="col-12">
-                <label className="form-label" htmlFor="keywords">
+              <div class="col-12">
+                <label class="form-label" htmlFor="keywords">
                   Keywords
                 </label>
                 <input
-                  className="form-control"
+                  class="form-control"
                   id="keywords"
                   {...register("keywords", { required: true })}
                 />
                 {errors.keywords && <span>Keywords are required</span>}
               </div>
             </div>
-            <hr className="my-4" />
-            <button className="btn btn-primary" type="submit">
+            <hr class="my-4" />
+            <button class="btn btn-primary" type="submit">
               {isEdit ? "Editar" : "Create Event"}
             </button>
           </form>

@@ -15,7 +15,7 @@ const NotFound = () => {
 
 
     return (
-        <div className='not-found'>
+        <div class='not-found'>
             <h1>Oooops....</h1>
             <h2>That page connot be found.</h2>
             <p>

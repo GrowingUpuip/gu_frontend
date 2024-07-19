@@ -9,16 +9,16 @@ export default function Home() {
         <meta name="description" content="Únete a Growing Up+!" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className="text-center my-5">
-        <div className="container">
+      <main class="text-center my-5">
+        <div class="container">
           <Image
             src="/images/banner.jpg"
             alt="Hero Image"
             width={800}
             height={400}
-            className="img-fluid"
+            class="img-fluid"
           />
-          <h1 className="mt-4">¡Únete a Growing Up+!</h1>
+          <h1 class="mt-4">¡Únete a Growing Up+!</h1>
         </div>
       </main>
     </div>

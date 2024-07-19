@@ -5,12 +5,12 @@ const DatePickerComponent = () => {
   const [selectedDate, setSelectedDate] = useState(null);
 
   return (
-    <div className="form-group">
+    <div class="form-group">
       <label htmlFor="datePicker">Date{"\u00A0"}</label>
       <DatePicker
         selected={selectedDate}
         onChange={(date) => setSelectedDate(date)}
-        className="form-control"
+        class="form-control"
         id="datePicker"
       />
     </div>

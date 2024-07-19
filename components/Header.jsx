@@ -27,24 +27,24 @@ const Header = () => {
           <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
             <li>
               <Link href="/about" legacyBehavior>
-                <a className="nav-link px-2 link-body-emphasis">
+                <a class="nav-link px-2 link-body-emphasis">
                   Acerca de Nosotros
                 </a>
               </Link>
             </li>
             <li>
               <Link href="#" legacyBehavior>
-                <a className="nav-link px-2 link-body-emphasis">Prácticas</a>
+                <a class="nav-link px-2 link-body-emphasis">Prácticas</a>
               </Link>
             </li>
             <li>
               <Link href="/contact" legacyBehavior>
-                <a className="nav-link px-2 link-body-emphasis">Proyectos</a>
+                <a class="nav-link px-2 link-body-emphasis">Proyectos</a>
               </Link>
             </li>
             <li>
               <Link href="/users" legacyBehavior>
-                <a className="nav-link px-2 link-body-emphasis">Más...</a>
+                <a class="nav-link px-2 link-body-emphasis">Más...</a>
               </Link>
             </li>
           </ul>
@@ -76,7 +76,7 @@ const Header = () => {
             <ul class="dropdown-menu text-small">
               <li>
                 <Link legacyBehavior href="/login">
-                  <a className="dropdown-item">Inicia Sesión</a>
+                  <a class="dropdown-item">Inicia Sesión</a>
                 </Link>
               </li>
               <li>
