@@ -1,168 +1,34 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.container {
     padding: 20px;
-    background-color: #f8f8f8;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-header .logo img {
-    max-height: 50px;
-}
-
-header nav ul {
-    list-style: none;
+  }
+  .card-title {
+    font-size: 1.5rem;
+  }
+  .card-text {
+    font-size: 1rem;
+  }
+  .bg-white {
+    background-color: #fff;
+  }
+  .more-opportunities {
+    margin-top: 40px;
+  }
+  .opportunity-list {
     display: flex;
+    flex-direction: column;
     gap: 20px;
-}
-
-header nav ul li {
-    display: inline;
-}
-
-header nav ul li a {
-    text-decoration: none;
-    color: #000000;
-    font-weight: bold;
-}
-
-header .login button {
-    background-color: #007BFF;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.hero {
-    position: relative;
-    text-align: center;
-    color: white;
-}
-
-.hero img {
-    width: 100%;
-    height: 300px;
-    object-fit: cover;
-}
-
-.hero-text {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-.project-info {
-    display: flex;
-    padding: 40px;
-    background-color: #ffffff;
-}
-
-.project-details {
-    flex: 2;
-    padding-right: 20px;
-    color: #000000;
-}
-
-.project-details h2 {
-    font-size: 24px;
-    margin-bottom: 10px;
-    color: #000000;
-}
-
-.project-details p {
-    margin: 10px 0;
-}
-
-.project-details button {
-    background-color: #007BFF;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.other-projects {
-    flex: 1;
-    padding-left: 20px;
-    color: #000000;
-}
-
-.other-projects h3 {
-    font-size: 20px;
-    margin-bottom: 20px;
-}
-
-.other-projects ul {
-    list-style: none;
-    padding: 0;
-}
-
-.other-projects ul li {
+  }
+  .opportunity-item {
     display: flex;
     align-items: center;
-    margin-bottom: 10px;
-}
-
-.other-projects ul li img {
-    max-height: 50px;
-    margin-right: 10px;
-    border-radius: 5px;
-}
-
-.other-projects ul li .project-info {
-    flex: 1;
-}
-
-.other-projects ul li .time {
-    font-size: 12px;
-    color: #000000;
-}
-
-footer {
-    background-color: #a2a2a2;
-    padding: 20px;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-}
-
-footer .footer-links div {
-    margin-bottom: 50px;
-    color: #000000;
+  }
+  .opportunity-thumbnail {
+    width: 80px;
+    height: 80px;
+    background-color: #ddd;
+    margin-right: 20px;
+  }
+  .opportunity-details h4 {
+    margin: 0;
+  }
   
-}
-
-footer .footer-links h4 {
-    margin-bottom: 5px;
-    color: #000000;
-}
-
-footer .footer-links ul {
-    list-style: none;
-    padding: 0;
-    color: #000000;
-    
-}
-
-footer .footer-links ul li {
-    margin-bottom: 10px;
-    color: #000000;
-    
-}
-
-footer .footer-links ul li a {
-    text-decoration: none;
-    color: #000000;
-}
