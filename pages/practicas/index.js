@@ -34,7 +34,7 @@ const Home = () => {
             </a>
             <div className="ml-auto">
               <Image
-                src="/images/avatar.jpg"
+                src="/images/practicas.png"
                 alt="juan perez"
                 width={40}
                 height={40}

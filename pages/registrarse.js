@@ -3,6 +3,9 @@ import { useRouter } from "next/router";
 import Image from "next/image";
 import { ToastContainer } from "react-toastify";
 import { showToast } from "@/components/toast";
+import { db, auth } from "@/lib/firebase";
+import { addDoc, collection } from "firebase/firestore";
+import { createUserWithEmailAndPassword } from "firebase/auth";
 const Registrarse = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -11,50 +14,46 @@ const Registrarse = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    const host = process.env.NEXT_PUBLIC_API_HOST; //|| "http://localhost:1337";
-    const response = await fetch(`${host}/api/auth/local/register`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
+    try {
+      const res = await createUserWithEmailAndPassword(auth, email, password);
+      const user = res.user;
+      await addDoc(collection(db, "users"), {
+        uid: user.uid,
         username,
+        authProvider: "local",
         email,
-        password,
-      }),
-    });
+      });
 
-    if (response.ok) {
       router.push("/login");
-    } else {
-      const data = await response.json();
-      showToast(data.error.message, "error");
+    } catch (err) {
+      console.error(err);
+      showToast(err.message, "error");
     }
   };
 
   return (
-    <main class="container d-flex justify-content-center align-items-center">
+    <main className="container d-flex justify-content-center align-items-center">
       <form onSubmit={handleSubmit}>
         <Image
           src="/images/logo.png"
           alt="Google"
           width={70}
           height={70}
-          class="mb-4"
+          className="mb-4"
         />
-        <h1 class="h3 mb-3 fw-normal">Registrarse</h1>
+        <h1 className="h3 mb-3 fw-normal">Registrarse</h1>
 
-        <div class="col-md-7 col-lg-8">
-          <div class="row">
-            <div class="col-12">
-              <label for="username" class="form-label">
+        <div className="col-md-7 col-lg-8">
+          <div className="row">
+            <div className="col-12">
+              <label htmlFor="username" className="form-label">
                 Username
               </label>
-              <div class="input-group has-validation">
-                <span class="input-group-text">@</span>
+              <div className="input-group has-validation">
+                <span className="input-group-text">@</span>
                 <input
                   type="text"
-                  class="form-control"
+                  className="form-control"
                   id="username"
                   placeholder="Username"
                   required=""
@@ -63,26 +62,26 @@ const Registrarse = () => {
                 />
               </div>
             </div>
-            <div class="col-12">
-              <label for="email" class="form-label">
+            <div className="col-12">
+              <label htmlFor="email" className="form-label">
                 Email
               </label>
               <input
                 type="email"
-                class="form-control"
+                className="form-control"
                 id="email"
                 placeholder="you@example.com"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
               />
             </div>
-            <div class="col-12">
-              <label for="password" class="form-label">
+            <div className="col-12">
+              <label htmlFor="password" className="form-label">
                 Contraseña
               </label>
               <input
                 type="password"
-                class="form-control"
+                className="form-control"
                 id="floatingPassword"
                 placeholder="Password"
                 value={password}
@@ -91,8 +90,8 @@ const Registrarse = () => {
             </div>
           </div>
         </div>
-        <hr class="my-4" />
-        <button class="btn btn-primary" type="submit">
+        <hr className="my-4" />
+        <button className="btn btn-primary" type="submit">
           Registrarse
         </button>
       </form>

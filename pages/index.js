@@ -9,16 +9,26 @@ export default function Home() {
         <meta name="description" content="Únete a Growing Up+!" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main class="text-center my-5">
-        <div class="container">
+      <main className="text-center my-5">
+        <div className="container">
           <Image
             src="/images/banner.jpg"
             alt="Hero Image"
             width={800}
             height={400}
-            class="img-fluid"
+            className="img-fluid"
           />
-          <h1 class="mt-4">¡Únete a Growing Up+!</h1>
+          <h1 className="mt-4">¡Únete a Growing Up+!</h1>
+          <p class="text-justify">
+            La etapa universitaria es una fase crucial en el desarrollo personal
+            y profesional de cualquier estudiante. Durante estos años, los
+            eventos universitarios, las prácticas profesionales y los proyectos
+            ofrecen oportunidades invaluables para crecer en diversos ámbitos.
+            Los eventos universitarios, como seminarios, conferencias y
+            hackatones, permiten a los estudiantes conectarse con expertos de la
+            industria, adquirir conocimientos prácticos y expandir sus redes
+            profesionales.
+          </p>
         </div>
       </main>
     </div>

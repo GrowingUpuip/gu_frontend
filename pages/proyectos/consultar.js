@@ -8,7 +8,6 @@ export default function Anuncio() {
   const [showModal, setShowModal] = useState(false);
   const [eventos, setEventos] = useState([]);
   const [eventoDestacado, setEventoDestacado] = useState(null);
-  const [eventoSeleccionado, setEventoSeleccionado] = useState(null);
 
   useEffect(() => {
     fetchEventos();
@@ -16,7 +15,7 @@ export default function Anuncio() {
 
   const fetchEventos = async () => {
     try {
-      const querySnapshot = await getDocs(collection(db, "anuncios"));
+      const querySnapshot = await getDocs(collection(db, "proyectos"));
       const eventosData = [];
       querySnapshot.forEach((doc) => {
         eventosData.push({ id: doc.id, ...doc.data() });
@@ -34,11 +33,7 @@ export default function Anuncio() {
     }
   };
 
-  const openModal = (eventoId = null) => {
-    setEventoSeleccionado(eventoId);
-    setShowModal(true);
-  };
-
+  const openModal = () => setShowModal(true);
   const closeModal = () => setShowModal(false);
 
   const handleSubmit = async ({ nombre, correo, eventoSeleccionado }) => {
@@ -70,10 +65,11 @@ export default function Anuncio() {
 
       <header className="hero">
         <div className="hero-content">
-          <h1>Explora nuestros próximos eventos y competencias</h1>
+          <h1>Explora nuestros Proyectos </h1>
           <p>
-            Desde hackatones hasta seminarios, hay algo para todos. Conéctate,
-            aprende y crece con nuestra comunidad.
+            Desde colaboraciones innovadoras hasta proyectos de investigación,
+            tenemos algo para todos. Únete, aprende y crece con nuestra
+            comunidad de proyectos.
           </p>
         </div>
       </header>
@@ -84,10 +80,7 @@ export default function Anuncio() {
             <div className="event-card">
               <h2>{eventoDestacado.title}</h2>
               <p>{eventoDestacado.description}</p>
-              <button
-                className="btn btn-primary"
-                onClick={() => openModal(eventoDestacado.id)}
-              >
+              <button className="btn btn-primary" onClick={openModal}>
                 Participa
               </button>
             </div>
@@ -97,7 +90,6 @@ export default function Anuncio() {
         {showModal && (
           <Modal
             eventos={eventos}
-            eventoSeleccionado={eventoSeleccionado}
             showModal={showModal}
             closeModal={closeModal}
             handleSubmit={handleSubmit}
@@ -127,9 +119,10 @@ export default function Anuncio() {
           </div>
         </section>
       </main>
+
       <style jsx>{`
         .hero {
-          background-image: url("/images/fondos_anuncios.jpg");
+          background-image: url("/images/proyectos.jpg");
           background-size: cover;
           background-position: center;
           color: white;
