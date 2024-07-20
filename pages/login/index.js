@@ -1,22 +1,28 @@
 import { useState } from "react";
 import { useRouter } from "next/router";
-import { useAuth } from "/components/authContext";
-
+import { useAuth } from "@/components/AuthContext";
+import Link from "next/link";
 import Image from "next/image";
+import { ToastContainer } from "react-toastify";
+import { showToast } from "@/components/toast";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from "@/lib/firebase";
 export default function Login() {
   const router = useRouter(); // Inicializa useRouter
   const { login } = useAuth();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Handle login logic here
-    console.log("Email:", email);
-    console.log("Password:", password);
-    login();
-    router.push("/anuncios");
-    
+  const handleSubmit = async (event) => {
+    console.log(email);
+    event.preventDefault();
+    try {
+      await signInWithEmailAndPassword(auth, email, password);
+      login();
+      router.push("/eventos");
+    } catch (error) {
+      console.error(error);
+      showToast(error.message, "error");
+    }
   };
 
   return (
@@ -63,7 +69,7 @@ export default function Login() {
 
             <div className="text-center">
               <button type="submit" className="btn btn-primary mb-3">
-                Aceptar y Ingresar
+                Acceder
               </button>
               <p>O</p>
               <button
@@ -82,10 +88,13 @@ export default function Login() {
             </div>
           </form>
           <div className="text-center mt-3">
-            <a href="#">¿Ya tienes cuenta? Click Aquí</a>
+            <Link href="/registrarse" legacyBehavior>
+              <a>¿No tienes cuenta? Click Aquí</a>
+            </Link>
           </div>
         </div>
       </div>
+      <ToastContainer />
     </div>
   );
 }

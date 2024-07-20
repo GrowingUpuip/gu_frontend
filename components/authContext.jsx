@@ -1,19 +1,44 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useState, useEffect } from "react";
+import { auth } from "@/lib/firebase";
+import {
+  signInWithEmailAndPassword,
+  signOut,
+  onAuthStateChanged,
+} from "firebase/auth";
 
 const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-  const login = () => {
-    // Aquí podrías implementar la lógica real de inicio de sesión, por ahora simplemente estableceremos el estado como autenticado.
-    setIsLoggedIn(true);
-    localStorage.setItem("isLoggedIn", "true"); // Guardar en localStorage que el usuario está autenticado
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      if (user) {
+        setIsLoggedIn(true);
+        localStorage.setItem("isLoggedIn", "true");
+      } else {
+        setIsLoggedIn(false);
+        localStorage.removeItem("isLoggedIn");
+      }
+    });
+
+    return () => unsubscribe();
+  }, []);
+
+  const login = async (email, password) => {
+    try {
+      await signInWithEmailAndPassword(auth, email, password);
+    } catch (error) {
+      console.error("Error al iniciar sesión:", error);
+    }
   };
 
-  const logout = () => {
-    setIsLoggedIn(false);
-    localStorage.removeItem("isLoggedIn"); // Remover el estado de autenticación al cerrar sesión
+  const logout = async () => {
+    try {
+      await signOut(auth);
+    } catch (error) {
+      console.error("Error al cerrar sesión:", error);
+    }
   };
 
   return (

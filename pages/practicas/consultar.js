@@ -5,50 +5,45 @@ import { db } from "@/lib/firebase";
 import { collection, getDocs, addDoc } from "firebase/firestore";
 import { ToastContainer } from "react-toastify";
 import { showToast } from "@/components/toast";
-export default function Anuncio() {
+export default function Practicas() {
   const [showModal, setShowModal] = useState(false);
-  const [eventos, setEventos] = useState([]);
-  const [eventoDestacado, setEventoDestacado] = useState(null);
-  const [eventoSeleccionado, setEventoSeleccionado] = useState(null);
+  const [practicas, setPracticas] = useState([]);
+  const [practicaDestacada, setPracticaDestacada] = useState(null);
 
   useEffect(() => {
-    fetchEventos();
+    fetchPracticas();
   }, []);
 
-  const fetchEventos = async () => {
+  const fetchPracticas = async () => {
     try {
-      const querySnapshot = await getDocs(collection(db, "anuncios"));
-      const eventosData = [];
+      const querySnapshot = await getDocs(collection(db, "practicas"));
+      const practicasData = [];
       querySnapshot.forEach((doc) => {
-        eventosData.push({ id: doc.id, ...doc.data() });
+        practicasData.push({ id: doc.id, ...doc.data() });
       });
-      setEventos(eventosData);
+      setPracticas(practicasData);
 
-      const mostRecentEvent = eventosData.reduce((latest, current) => {
-        return new Date(current.date_start) > new Date(latest.date_start)
+      const mostRecentPractica = practicasData.reduce((latest, current) => {
+        return new Date(current.fecha_inicio) > new Date(latest.fecha_inicio)
           ? current
           : latest;
-      }, eventosData[0]);
-      setEventoDestacado(mostRecentEvent);
+      }, practicasData[0]);
+      setPracticaDestacada(mostRecentPractica);
     } catch (error) {
-      console.error("Error fetching events:", error);
+      console.error("Error fetching practicas:", error);
     }
   };
 
-  const openModal = (eventoId = null) => {
-    setEventoSeleccionado(eventoId);
-    setShowModal(true);
-  };
-
+  const openModal = () => setShowModal(true);
   const closeModal = () => setShowModal(false);
 
-  const handleSubmit = async ({ nombre, correo, eventoSeleccionado }) => {
+  const handleSubmit = async ({ nombre, correo, practicaSeleccionada }) => {
     try {
       const registroRef = collection(db, "registros");
       await addDoc(registroRef, {
         nombre,
         correo,
-        id_evento: eventoSeleccionado,
+        id_practica: practicaSeleccionada,
       });
       showToast("Registro exitoso", "done");
       closeModal();
@@ -61,34 +56,36 @@ export default function Anuncio() {
   return (
     <div>
       <Head>
-        <title>Eventos y Competencias</title>
+        <title>Prácticas Profesionales</title>
         <meta
           name="description"
-          content="Explora nuestros próximos eventos y competencias"
+          content="Explora nuestras prácticas profesionales"
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <header className="hero">
         <div className="hero-content">
-          <h1>Explora nuestros próximos eventos y competencias</h1>
+          <h1>Explora nuestras prácticas</h1>
           <p>
-            Desde hackatones hasta seminarios, hay algo para todos. Conéctate,
-            aprende y crece con nuestra comunidad.
+            Desde prácticas profesionales hasta programas de mentoría, tenemos
+            algo para todos. Conéctate, adquiere experiencia y crece con nuestra
+            comunidad de profesionales.
           </p>
         </div>
       </header>
 
       <main className="container">
-        {eventoDestacado && (
-          <section className="event-highlight">
-            <div className="event-card">
-              <h2>{eventoDestacado.title}</h2>
-              <p>{eventoDestacado.description}</p>
-              <button
-                className="btn btn-primary"
-                onClick={() => openModal(eventoDestacado.id)}
-              >
+        {practicaDestacada && (
+          <section className="practica-highlight">
+            <div className="practica-card">
+              <h2>{practicaDestacada.titulo}</h2>
+              <p>{practicaDestacada.descripcion}</p>
+              <p>
+                <strong>Fecha de inicio:</strong>{" "}
+                {practicaDestacada.fecha_inicio}
+              </p>
+              <button className="btn btn-primary" onClick={openModal}>
                 Participa
               </button>
             </div>
@@ -97,28 +94,28 @@ export default function Anuncio() {
 
         {showModal && (
           <Modal
-            opcion={"title"}
-            eventos={eventos}
-            eventoSeleccionado={eventoSeleccionado}
+            opcion={"titulo"}
+            eventos={practicas}
             showModal={showModal}
             closeModal={closeModal}
             handleSubmit={handleSubmit}
           />
         )}
 
-        <section className="more-events">
-          <h3>Más Eventos</h3>
-          <div className="event-list">
-            {eventos.map((evento) => (
-              <div key={evento.id} className="event-item">
-                <div className="event-thumbnail"></div>
-                <div className="event-details">
-                  <h4>{evento.title}</h4>
-                  <p>{evento.description}</p>
+        <section className="more-practicas">
+          <h3>Más Prácticas</h3>
+          <div className="practica-list">
+            {practicas.map((practica) => (
+              <div key={practica.id} className="practica-item">
+                <div className="practica-thumbnail"></div>
+                <div className="practica-details">
+                  <h4>{practica.titulo}</h4>
+                  <p>{practica.descripcion}</p>
+
                   <p>
                     <button
                       className="btn btn-primary"
-                      onClick={() => openModal(evento.id)}
+                      onClick={() => openModal(practica.id)}
                     >
                       Participar
                     </button>
@@ -130,9 +127,10 @@ export default function Anuncio() {
         </section>
         <ToastContainer />
       </main>
+
       <style jsx>{`
         .hero {
-          background-image: url("/images/fondos_anuncios.jpg");
+          background-image: url("/images/practicas.png");
           background-size: cover;
           background-position: center;
           color: white;
@@ -147,18 +145,18 @@ export default function Anuncio() {
         .container {
           padding: 20px;
         }
-        .event-highlight {
+        .practica-highlight {
           margin-bottom: 40px;
         }
-        .event-card {
+        .practica-card {
           background-color: #f8f9fa;
           padding: 20px;
           border-radius: 8px;
         }
-        .event-card h2 {
+        .practica-card h2 {
           margin-top: 0;
         }
-        .event-card button {
+        .practica-card button {
           background-color: #007bff;
           color: white;
           border: none;
@@ -166,25 +164,25 @@ export default function Anuncio() {
           border-radius: 4px;
           cursor: pointer;
         }
-        .more-events {
+        .more-practicas {
           margin-top: 40px;
         }
-        .event-list {
+        .practica-list {
           display: flex;
           flex-direction: column;
           gap: 20px;
         }
-        .event-item {
+        .practica-item {
           display: flex;
           align-items: center;
         }
-        .event-thumbnail {
+        .practica-thumbnail {
           width: 80px;
           height: 80px;
           background-color: #ddd;
           margin-right: 20px;
         }
-        .event-details h4 {
+        .practica-details h4 {
           margin: 0;
         }
       `}</style>
