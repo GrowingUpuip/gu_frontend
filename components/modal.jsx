@@ -1,21 +1,36 @@
-// Modal.js
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
-const Modal = ({ eventos, showModal, closeModal, handleSubmit }) => {
+const Modal = ({
+  opcion,
+  eventos,
+  eventoSeleccionado,
+  showModal,
+  closeModal,
+  handleSubmit,
+}) => {
   const [nombre, setNombre] = useState("");
   const [correo, setCorreo] = useState("");
-  const [eventoSeleccionado, setEventoSeleccionado] = useState(null);
+  const [eventoSeleccionadoState, setEventoSeleccionadoState] =
+    useState(eventoSeleccionado);
+
+  useEffect(() => {
+    setEventoSeleccionadoState(eventoSeleccionado);
+  }, [eventoSeleccionado]);
 
   const handleEventoChange = (e) => {
     const selectedEvent = eventos.find(
-      (evento) => evento.id === parseInt(e.target.value)
+      (evento) => evento.id === e.target.value
     );
-    setEventoSeleccionado(selectedEvent);
+    setEventoSeleccionadoState(selectedEvent);
   };
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    handleSubmit({ nombre, correo, eventoSeleccionado });
+    handleSubmit({
+      nombre,
+      correo,
+      eventoSeleccionado: eventoSeleccionadoState,
+    });
   };
 
   return (
@@ -40,14 +55,16 @@ const Modal = ({ eventos, showModal, closeModal, handleSubmit }) => {
                 <select
                   id="eventoSelect"
                   className="form-control"
-                  value={eventoSeleccionado ? eventoSeleccionado.id : ""}
+                  value={
+                    eventoSeleccionadoState ? eventoSeleccionadoState.id : ""
+                  }
                   onChange={handleEventoChange}
                   required
                 >
                   <option value="">Selecciona un evento</option>
                   {eventos.map((evento) => (
                     <option key={evento.id} value={evento.id}>
-                      {evento.titulo}
+                      {evento[opcion]}
                     </option>
                   ))}
                 </select>
@@ -82,8 +99,7 @@ const Modal = ({ eventos, showModal, closeModal, handleSubmit }) => {
             </form>
           </div>
         </div>
-      </div>
-
+      </div>{" "}
       {/* Estilos para el modal */}
       <style jsx>{`
         .modal {
