@@ -4,7 +4,11 @@ import EventList from "@/components/eventos/EventList";
 import DatePickerComponent from "@/components/eventos/DatePicker";
 import Image from "next/image";
 import Calendar from "react-calendar";
+<<<<<<< HEAD
 import { useAuth } from "@/components/authContext";
+=======
+import { useAuth } from "@/components/AuthContext";
+>>>>>>> 8f9e19aef121f171736521c3ddb182d29c20be7e
 import { useRouter } from "next/router";
 
 import "react-calendar/dist/Calendar.css";
@@ -18,11 +22,18 @@ const Home = () => {
 
   useEffect(() => {
     // Verificar si el usuario está autenticado al cargar la página
+<<<<<<< HEAD
     const isAuthenticated = localStorage.getItem("isLoggedIn");
     if (!isAuthenticated) {
       router.push("/login"); // Redirigir al usuario a la página de inicio de sesión si no está autenticado
     }
   }, [router]);
+=======
+    if (!isLoggedIn) {
+      router.push("/login"); // Redirigir al usuario a la página de inicio de sesión si no está autenticado
+    }
+  }, [isLoggedIn, router]);
+>>>>>>> 8f9e19aef121f171736521c3ddb182d29c20be7e
 
   return (
     <div>

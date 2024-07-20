@@ -1,6 +1,10 @@
 import { useState, useEffect } from "react";
 
 const Modal = ({
+<<<<<<< HEAD
+=======
+  opcion,
+>>>>>>> 8f9e19aef121f171736521c3ddb182d29c20be7e
   eventos,
   eventoSeleccionado,
   showModal,
@@ -63,7 +67,11 @@ const Modal = ({
                   <option value="">Selecciona un evento</option>
                   {eventos.map((evento) => (
                     <option key={evento.id} value={evento.id}>
+<<<<<<< HEAD
                       {evento.title}
+=======
+                      {evento[opcion]}
+>>>>>>> 8f9e19aef121f171736521c3ddb182d29c20be7e
                     </option>
                   ))}
                 </select>

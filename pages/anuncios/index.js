@@ -3,7 +3,12 @@ import { useState, useEffect } from "react";
 import Modal from "@/components/modal";
 import { db } from "@/lib/firebase";
 import { collection, getDocs, addDoc } from "firebase/firestore";
+<<<<<<< HEAD
 
+=======
+import { ToastContainer } from "react-toastify";
+import { showToast } from "@/components/toast";
+>>>>>>> 8f9e19aef121f171736521c3ddb182d29c20be7e
 export default function Anuncio() {
   const [showModal, setShowModal] = useState(false);
   const [eventos, setEventos] = useState([]);
@@ -49,11 +54,19 @@ export default function Anuncio() {
         correo,
         id_evento: eventoSeleccionado,
       });
+<<<<<<< HEAD
       alert("Registro exitoso");
       closeModal();
     } catch (error) {
       console.error("Error al registrar:", error);
       alert("Hubo un problema al registrar, intenta de nuevo.");
+=======
+      showToast("Registro exitoso", "done");
+      closeModal();
+    } catch (error) {
+      console.error("Error al registrar:", error);
+      showToast("Hubo un problema al registrar, intenta de nuevo.", "error");
+>>>>>>> 8f9e19aef121f171736521c3ddb182d29c20be7e
     }
   };
 
@@ -96,6 +109,10 @@ export default function Anuncio() {
 
         {showModal && (
           <Modal
+<<<<<<< HEAD
+=======
+            opcion={"title"}
+>>>>>>> 8f9e19aef121f171736521c3ddb182d29c20be7e
             eventos={eventos}
             eventoSeleccionado={eventoSeleccionado}
             showModal={showModal}
@@ -126,6 +143,10 @@ export default function Anuncio() {
             ))}
           </div>
         </section>
+<<<<<<< HEAD
+=======
+        <ToastContainer />
+>>>>>>> 8f9e19aef121f171736521c3ddb182d29c20be7e
       </main>
       <style jsx>{`
         .hero {

@@ -1,6 +1,10 @@
 import { useState } from "react";
 import { useRouter } from "next/router";
+<<<<<<< HEAD
 import { useAuth } from "@/components/authContext";
+=======
+import { useAuth } from "@/components/AuthContext";
+>>>>>>> 8f9e19aef121f171736521c3ddb182d29c20be7e
 import Link from "next/link";
 import Image from "next/image";
 import { ToastContainer } from "react-toastify";
@@ -15,9 +19,12 @@ export default function Login() {
   const handleSubmit = async (event) => {
     console.log(email);
     event.preventDefault();
+<<<<<<< HEAD
 
     const host = process.env.NEXT_PUBLIC_API_HOST; //|| "http://localhost:1337";
 
+=======
+>>>>>>> 8f9e19aef121f171736521c3ddb182d29c20be7e
     try {
       await signInWithEmailAndPassword(auth, email, password);
       login();
@@ -72,7 +79,11 @@ export default function Login() {
 
             <div className="text-center">
               <button type="submit" className="btn btn-primary mb-3">
+<<<<<<< HEAD
                 Aceptar y Ingresar
+=======
+                Acceder
+>>>>>>> 8f9e19aef121f171736521c3ddb182d29c20be7e
               </button>
               <p>O</p>
               <button

@@ -1,7 +1,11 @@
 import Image from "next/image";
 import { useRouter } from "next/router";
 import Link from "next/link";
+<<<<<<< HEAD
 import { useAuth } from "@/components/authContext";
+=======
+import { useAuth } from "@/components/AuthContext";
+>>>>>>> 8f9e19aef121f171736521c3ddb182d29c20be7e
 const Header = () => {
   const { logout, isLoggedIn } = useAuth();
   const router = useRouter(); // Inicializa useRouter
@@ -10,7 +14,11 @@ const Header = () => {
     router.push("/login");
   };
   return (
+<<<<<<< HEAD
     <header className="p-3 mb-3 border-bottom">
+=======
+    <header className="p-3 mb-3 border-bottom ">
+>>>>>>> 8f9e19aef121f171736521c3ddb182d29c20be7e
       <div className="container">
         <div className="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
           <Link href="/" legacyBehavior>
@@ -41,7 +49,11 @@ const Header = () => {
               </Link>
             </li>
             <li>
+<<<<<<< HEAD
               <Link href="/users" legacyBehavior>
+=======
+              <Link href="https://uip.edu.pa/" legacyBehavior>
+>>>>>>> 8f9e19aef121f171736521c3ddb182d29c20be7e
                 <a className="nav-link px-2 link-body-emphasis">Más...</a>
               </Link>
             </li>
@@ -75,11 +87,25 @@ const Header = () => {
               />
             </a>
             <ul className="dropdown-menu text-small">
+<<<<<<< HEAD
               <li>
                 <Link legacyBehavior href="/login">
                   <a className="dropdown-item">Inicia Sesión</a>
                 </Link>
               </li>
+=======
+              {!isLoggedIn ? (
+                <>
+                  <li>
+                    <Link legacyBehavior href="/login">
+                      <a className="dropdown-item">Inicia Sesión</a>
+                    </Link>
+                  </li>
+                </>
+              ) : (
+                <></>
+              )}
+>>>>>>> 8f9e19aef121f171736521c3ddb182d29c20be7e
               <li>
                 <Link legacyBehavior href="/registrarse">
                   <a className="dropdown-item">Registrarse</a>
@@ -93,6 +119,19 @@ const Header = () => {
                     </Link>
                   </li>
                   <li>
+<<<<<<< HEAD
+=======
+                    <Link legacyBehavior href="/practicas">
+                      <a className="dropdown-item">Administrar practicas</a>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link legacyBehavior href="/proyectos">
+                      <a className="dropdown-item">Administrar proyectos</a>
+                    </Link>
+                  </li>
+                  <li>
+>>>>>>> 8f9e19aef121f171736521c3ddb182d29c20be7e
                     <a className="dropdown-item" onClick={salirPaginaInicio}>
                       Salir
                     </a>

@@ -19,7 +19,11 @@ export default function Home() {
             className="img-fluid"
           />
           <h1 className="mt-4">¡Únete a Growing Up+!</h1>
+<<<<<<< HEAD
           <p class="text-justify">
+=======
+          <p className="text-justify">
+>>>>>>> 8f9e19aef121f171736521c3ddb182d29c20be7e
             La etapa universitaria es una fase crucial en el desarrollo personal
             y profesional de cualquier estudiante. Durante estos años, los
             eventos universitarios, las prácticas profesionales y los proyectos

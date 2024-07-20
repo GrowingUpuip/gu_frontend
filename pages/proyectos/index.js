@@ -1,10 +1,18 @@
 import React, { useState, useEffect } from "react";
 import Sidebar from "@/components/eventos/Sidebar";
+<<<<<<< HEAD
 import EventList from "@/components/eventos/EventList";
 import DatePickerComponent from "@/components/eventos/DatePicker";
 import Image from "next/image";
 import Calendar from "react-calendar";
 import { useAuth } from "@/components/authContext";
+=======
+import ProyectosList from "@/components/proyectos/ProyectosList";
+import DatePickerComponent from "@/components/eventos/DatePicker";
+import Image from "next/image";
+import Calendar from "react-calendar";
+import { useAuth } from "@/components/AuthContext";
+>>>>>>> 8f9e19aef121f171736521c3ddb182d29c20be7e
 import { useRouter } from "next/router";
 
 import "react-calendar/dist/Calendar.css";
@@ -17,12 +25,19 @@ const Home = () => {
   const { isLoggedIn } = useAuth();
 
   useEffect(() => {
+<<<<<<< HEAD
     // Verificar si el usuario está autenticado al cargar la página
     const isAuthenticated = localStorage.getItem("isLoggedIn");
     if (!isAuthenticated) {
       router.push("/login"); // Redirigir al usuario a la página de inicio de sesión si no está autenticado
     }
   }, [router]);
+=======
+    if (!isLoggedIn) {
+      router.push("/login"); // Redirigir al usuario a la página de inicio de sesión si no está autenticado
+    }
+  }, [router, isLoggedIn]);
+>>>>>>> 8f9e19aef121f171736521c3ddb182d29c20be7e
 
   return (
     <div>
@@ -30,7 +45,11 @@ const Home = () => {
         <div className="container">
           <nav className="navbar navbar-expand-lg navbar-light bg-light">
             <a className="navbar-brand" href="#">
+<<<<<<< HEAD
               Eventos
+=======
+              Practicas profesionales
+>>>>>>> 8f9e19aef121f171736521c3ddb182d29c20be7e
             </a>
             <div className="ml-auto">
               <Image
@@ -67,7 +86,11 @@ const Home = () => {
               </ul>
             </div>
             <div className="col">
+<<<<<<< HEAD
               <EventList />
+=======
+              <ProyectosList />
+>>>>>>> 8f9e19aef121f171736521c3ddb182d29c20be7e
             </div>
           </div>
         </div>

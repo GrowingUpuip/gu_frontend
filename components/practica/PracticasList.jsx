@@ -1,11 +1,6 @@
 import React, { useEffect, useState, useCallback } from "react";
 import Image from "next/image";
 import { useRouter } from "next/router";
-<<<<<<< HEAD
-=======
-import { ToastContainer } from "react-toastify";
-import { showToast } from "@/components/toast";
->>>>>>> 8f9e19aef121f171736521c3ddb182d29c20be7e
 import { db } from "@/lib/firebase";
 import {
   collection,
@@ -13,90 +8,88 @@ import {
   query,
   limit,
   startAfter,
-<<<<<<< HEAD
-=======
   deleteDoc,
   doc,
->>>>>>> 8f9e19aef121f171736521c3ddb182d29c20be7e
 } from "firebase/firestore";
+import { ToastContainer } from "react-toastify";
+import { showToast } from "@/components/toast";
 
-const EventList = () => {
-  const [events, setEvents] = useState([]);
+const PracticasList = () => {
+  const [practicas, setPracticas] = useState([]);
   const [page, setPage] = useState(1);
   const [pageCount, setPageCount] = useState(1);
   const [lastVisible, setLastVisible] = useState(null);
   const router = useRouter();
-  const eventsPerPage = 10; // Define the number of events per page
+  const practicasPerPage = 10; // Define the number of practicas per page
 
-  const fetchEvents = useCallback(
+  const fetchPracticas = useCallback(
     async (page) => {
       try {
-        const eventsRef = collection(db, "anuncios");
+        const practicasRef = collection(db, "practicas");
         let q;
 
         if (page === 1) {
-          q = query(eventsRef, limit(eventsPerPage));
+          q = query(practicasRef, limit(practicasPerPage));
         } else {
-          q = query(eventsRef, startAfter(lastVisible), limit(eventsPerPage));
+          q = query(
+            practicasRef,
+            startAfter(lastVisible),
+            limit(practicasPerPage)
+          );
         }
 
         const querySnapshot = await getDocs(q);
 
-        const eventsData = [];
+        const practicasData = [];
         querySnapshot.forEach((doc) => {
-          eventsData.push({ id: doc.id, ...doc.data() });
+          practicasData.push({ id: doc.id, ...doc.data() });
         });
 
-        setEvents(eventsData);
+        setPracticas(practicasData);
         setLastVisible(querySnapshot.docs[querySnapshot.docs.length - 1]);
 
         // You may need to adjust the logic for pageCount based on your data
-        setPageCount(Math.ceil(querySnapshot.size / eventsPerPage));
+        setPageCount(Math.ceil(querySnapshot.size / practicasPerPage));
       } catch (error) {
-        console.error("Error fetching events:", error);
+        console.error("Error fetching practicas:", error);
       }
     },
-    [lastVisible, eventsPerPage]
+    [lastVisible, practicasPerPage]
   );
 
   useEffect(() => {
-    fetchEvents(page);
-  }, [page, fetchEvents]);
+    fetchPracticas(page);
+  }, [page, fetchPracticas]);
 
-  const irRegistroEvento = () => {
-    router.push("/eventos/registrar");
+  const irRegistroPractica = () => {
+    router.push("/practicas/registrar");
   };
 
-  const irEditarEvento = (id) => {
-    router.push("/eventos/registrar/?id=" + id);
+  const irEditarPractica = (id) => {
+    router.push("/practicas/registrar/?id=" + id);
   };
 
-<<<<<<< HEAD
-=======
-  const borrarEvento = async (id) => {
+  const borrarPractica = async (id) => {
     try {
-      await deleteDoc(doc(db, "anuncios", id));
-      <ToastContainer />;
-
-      showToast("Evento borrado con éxito", "done");
-      fetchEvents(page); // Refresh the list after deleting
+      await deleteDoc(doc(db, "practicas", id));
+      showToast("Práctica borrada con éxito", "done");
+      fetchPracticas(page); // Refresh the list after deleting
     } catch (error) {
-      console.error("Error borrando el evento:", error);
+      console.error("Error borrando la práctica:", error);
       showToast(
-        "Hubo un problema al borrar el evento, intenta de nuevo.",
+        "Hubo un problema al borrar la práctica, intenta de nuevo.",
         "error"
       );
     }
   };
 
->>>>>>> 8f9e19aef121f171736521c3ddb182d29c20be7e
   return (
     <div>
       <div className="text-center border-bottom">
         <div className="overflow-hidden" style={{ maxHeight: "30vh" }}>
           <div className="container">
             <Image
-              src="/images/baner.jpg"
+              src="/images/practicas.png"
               alt="juan perez"
               width={700}
               height={500}
@@ -104,58 +97,53 @@ const EventList = () => {
             />
           </div>
         </div>
-        <p className="display-6 fw-bold text-body-emphasis">Crea un evento</p>
+        <p className="display-6 fw-bold text-body-emphasis">
+          Crea una práctica
+        </p>
         <div className="col-lg-6 mx-auto">
           <p className="lead mb-4">
-            Organiza tu próximo evento de forma sencilla con nuestra aplicación.
-            Ingresa los detalles básicos, selecciona fecha y hora, y personaliza
-            las opciones. Envía invitaciones, gestiona confirmaciones y mantente
-            informado en tiempo real. Todo lo que necesitas para un evento
-            exitoso está a solo unos clics.
+            Organiza tu próxima práctica profesional de forma sencilla con
+            nuestra aplicación. Ingresa los detalles básicos, selecciona fecha y
+            hora, y personaliza las opciones. Envía invitaciones, gestiona
+            confirmaciones y mantente informado en tiempo real. Todo lo que
+            necesitas para una práctica exitosa está a solo unos clics.
           </p>
           <div className="d-grid gap-2 d-sm-flex justify-content-sm-center mb-5">
             <button
-              onClick={irRegistroEvento}
+              onClick={irRegistroPractica}
               type="button"
               className="btn btn-primary btn-lg px-4 me-sm-3"
             >
-              Crear eventos
+              Crear práctica
             </button>
           </div>
         </div>
       </div>
-      {events.map((event) => (
-        <div className="card mb-3" key={event.id}>
+      {practicas.map((practica) => (
+        <div className="card mb-3" key={practica.id}>
           <div className="card-body">
-            <h5 className="card-title">{event.title}</h5>
+            <h5 className="card-title">{practica.titulo}</h5>
             <h6 className="card-subtitle mb-2 text-muted">
-              {event.date_start}
+              {practica.fecha_inicio}
             </h6>
-            <p className="card-text">{event.description}</p>
-<<<<<<< HEAD
-
-=======
->>>>>>> 8f9e19aef121f171736521c3ddb182d29c20be7e
+            <p className="card-text">{practica.descripcion}</p>
             <div className="row">
               <div className="col-1">
                 <a
-                  onClick={() => irEditarEvento(event.id)}
+                  onClick={() => irEditarPractica(practica.id)}
                   className="btn btn-primary"
                 >
                   Editar
                 </a>
               </div>
-<<<<<<< HEAD
-=======
               <div className="col-1">
                 <a
-                  onClick={() => borrarEvento(event.id)}
+                  onClick={() => borrarPractica(practica.id)}
                   className="btn btn-danger"
                 >
                   Borrar
                 </a>
               </div>
->>>>>>> 8f9e19aef121f171736521c3ddb182d29c20be7e
             </div>
           </div>
         </div>
@@ -192,12 +180,9 @@ const EventList = () => {
           </li>
         </ul>
       </nav>
-<<<<<<< HEAD
-=======
       <ToastContainer />
->>>>>>> 8f9e19aef121f171736521c3ddb182d29c20be7e
     </div>
   );
 };
 
-export default EventList;
+export default PracticasList;

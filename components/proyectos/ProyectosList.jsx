@@ -1,11 +1,8 @@
 import React, { useEffect, useState, useCallback } from "react";
 import Image from "next/image";
 import { useRouter } from "next/router";
-<<<<<<< HEAD
-=======
 import { ToastContainer } from "react-toastify";
 import { showToast } from "@/components/toast";
->>>>>>> 8f9e19aef121f171736521c3ddb182d29c20be7e
 import { db } from "@/lib/firebase";
 import {
   collection,
@@ -13,90 +10,86 @@ import {
   query,
   limit,
   startAfter,
-<<<<<<< HEAD
-=======
   deleteDoc,
   doc,
->>>>>>> 8f9e19aef121f171736521c3ddb182d29c20be7e
 } from "firebase/firestore";
 
-const EventList = () => {
-  const [events, setEvents] = useState([]);
+const ProyectosList = () => {
+  const [proyectos, setProyectos] = useState([]);
   const [page, setPage] = useState(1);
   const [pageCount, setPageCount] = useState(1);
   const [lastVisible, setLastVisible] = useState(null);
   const router = useRouter();
-  const eventsPerPage = 10; // Define the number of events per page
+  const proyectosPerPage = 10; // Define the number of proyectos per page
 
-  const fetchEvents = useCallback(
+  const fetchProyectos = useCallback(
     async (page) => {
       try {
-        const eventsRef = collection(db, "anuncios");
+        const proyectosRef = collection(db, "proyectos");
         let q;
 
         if (page === 1) {
-          q = query(eventsRef, limit(eventsPerPage));
+          q = query(proyectosRef, limit(proyectosPerPage));
         } else {
-          q = query(eventsRef, startAfter(lastVisible), limit(eventsPerPage));
+          q = query(
+            proyectosRef,
+            startAfter(lastVisible),
+            limit(proyectosPerPage)
+          );
         }
 
         const querySnapshot = await getDocs(q);
 
-        const eventsData = [];
+        const proyectosData = [];
         querySnapshot.forEach((doc) => {
-          eventsData.push({ id: doc.id, ...doc.data() });
+          proyectosData.push({ id: doc.id, ...doc.data() });
         });
 
-        setEvents(eventsData);
+        setProyectos(proyectosData);
         setLastVisible(querySnapshot.docs[querySnapshot.docs.length - 1]);
 
         // You may need to adjust the logic for pageCount based on your data
-        setPageCount(Math.ceil(querySnapshot.size / eventsPerPage));
+        setPageCount(Math.ceil(querySnapshot.size / proyectosPerPage));
       } catch (error) {
-        console.error("Error fetching events:", error);
+        console.error("Error fetching proyectos:", error);
       }
     },
-    [lastVisible, eventsPerPage]
+    [lastVisible, proyectosPerPage]
   );
 
   useEffect(() => {
-    fetchEvents(page);
-  }, [page, fetchEvents]);
+    fetchProyectos(page);
+  }, [page, fetchProyectos]);
 
-  const irRegistroEvento = () => {
-    router.push("/eventos/registrar");
+  const irRegistroProyecto = () => {
+    router.push("/proyectos/registrar");
   };
 
-  const irEditarEvento = (id) => {
-    router.push("/eventos/registrar/?id=" + id);
+  const irEditarProyecto = (id) => {
+    router.push("/proyectos/registrar/?id=" + id);
   };
 
-<<<<<<< HEAD
-=======
-  const borrarEvento = async (id) => {
+  const borrarProyecto = async (id) => {
     try {
-      await deleteDoc(doc(db, "anuncios", id));
-      <ToastContainer />;
-
-      showToast("Evento borrado con éxito", "done");
-      fetchEvents(page); // Refresh the list after deleting
+      await deleteDoc(doc(db, "proyectos", id));
+      showToast("Proyecto borrado con éxito", "done");
+      fetchProyectos(page); // Refresh the list after deleting
     } catch (error) {
-      console.error("Error borrando el evento:", error);
+      console.error("Error borrando el proyecto:", error);
       showToast(
-        "Hubo un problema al borrar el evento, intenta de nuevo.",
+        "Hubo un problema al borrar el proyecto, intenta de nuevo.",
         "error"
       );
     }
   };
 
->>>>>>> 8f9e19aef121f171736521c3ddb182d29c20be7e
   return (
     <div>
       <div className="text-center border-bottom">
         <div className="overflow-hidden" style={{ maxHeight: "30vh" }}>
           <div className="container">
             <Image
-              src="/images/baner.jpg"
+              src="/images/proyectos.jpg"
               alt="juan perez"
               width={700}
               height={500}
@@ -104,58 +97,51 @@ const EventList = () => {
             />
           </div>
         </div>
-        <p className="display-6 fw-bold text-body-emphasis">Crea un evento</p>
+        <p className="display-6 fw-bold text-body-emphasis">Crea un proyecto</p>
         <div className="col-lg-6 mx-auto">
           <p className="lead mb-4">
-            Organiza tu próximo evento de forma sencilla con nuestra aplicación.
-            Ingresa los detalles básicos, selecciona fecha y hora, y personaliza
-            las opciones. Envía invitaciones, gestiona confirmaciones y mantente
-            informado en tiempo real. Todo lo que necesitas para un evento
-            exitoso está a solo unos clics.
+            Organiza tu próximo proyecto profesional de forma sencilla con
+            nuestra aplicación. Ingresa los detalles básicos, selecciona fecha y
+            hora, y personaliza las opciones. Envía invitaciones, gestiona
+            confirmaciones y mantente informado en tiempo real. Todo lo que
+            necesitas para un proyecto exitoso está a solo unos clics.
           </p>
           <div className="d-grid gap-2 d-sm-flex justify-content-sm-center mb-5">
             <button
-              onClick={irRegistroEvento}
+              onClick={irRegistroProyecto}
               type="button"
               className="btn btn-primary btn-lg px-4 me-sm-3"
             >
-              Crear eventos
+              Crear proyecto
             </button>
           </div>
         </div>
       </div>
-      {events.map((event) => (
-        <div className="card mb-3" key={event.id}>
+      {proyectos.map((proyecto) => (
+        <div className="card mb-3" key={proyecto.id}>
           <div className="card-body">
-            <h5 className="card-title">{event.title}</h5>
+            <h5 className="card-title">{proyecto.titulo}</h5>
             <h6 className="card-subtitle mb-2 text-muted">
-              {event.date_start}
+              {proyecto.fecha_inicio}
             </h6>
-            <p className="card-text">{event.description}</p>
-<<<<<<< HEAD
-
-=======
->>>>>>> 8f9e19aef121f171736521c3ddb182d29c20be7e
+            <p className="card-text">{proyecto.descripcion}</p>
             <div className="row">
               <div className="col-1">
                 <a
-                  onClick={() => irEditarEvento(event.id)}
+                  onClick={() => irEditarProyecto(proyecto.id)}
                   className="btn btn-primary"
                 >
                   Editar
                 </a>
               </div>
-<<<<<<< HEAD
-=======
               <div className="col-1">
                 <a
-                  onClick={() => borrarEvento(event.id)}
+                  onClick={() => borrarProyecto(proyecto.id)}
                   className="btn btn-danger"
                 >
                   Borrar
                 </a>
               </div>
->>>>>>> 8f9e19aef121f171736521c3ddb182d29c20be7e
             </div>
           </div>
         </div>
@@ -192,12 +178,9 @@ const EventList = () => {
           </li>
         </ul>
       </nav>
-<<<<<<< HEAD
-=======
       <ToastContainer />
->>>>>>> 8f9e19aef121f171736521c3ddb182d29c20be7e
     </div>
   );
 };
 
-export default EventList;
+export default ProyectosList;
